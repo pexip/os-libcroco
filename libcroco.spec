@@ -2,7 +2,7 @@
 
 Name:		libcroco
 Summary:	CSS2 parser library
-Version: 	0.6.8
+Version: 	0.6.11
 Release: 	1
 License: 	LGPL
 Group:		System/Libraries

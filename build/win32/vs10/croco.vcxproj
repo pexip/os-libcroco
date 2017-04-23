@@ -42,40 +42,44 @@ See COPYRIGHTS file for copyright information.
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="libcroco.props" />
+    <Import Project="croco-gen-srcs.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="libcroco.props" />
+    <Import Project="croco-gen-srcs.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="libcroco.props" />
+    <Import Project="croco-gen-srcs.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="libcroco.props" />
+    <Import Project="croco-gen-srcs.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
@@ -97,16 +101,14 @@ See COPYRIGHTS file for copyright information.
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
-    <PreLinkEvent>
-      <Command>$(GenerateLibCrocoDef)</Command>
-    </PreLinkEvent>
     <Link>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(LibCrocoDllPrefix)$(ProjectName)$(LibCrocoDllSuffix).dll</OutputFile>
       <ModuleDefinitionFile>$(IntDir)libcroco.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <ImportLibrary>$(TargetDir)$(ProjectName)-$(LibCrocoApiVersion).lib</ImportLibrary>
+      <ImportLibrary>$(TargetDir)$(ProjectName)-$(ApiVersion).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(TargetDir)$(LibCrocoDllPrefix)$(ProjectName)$(LibCrocoDllSuffix).pdb</ProgramDatabaseFile>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
   </ItemDefinitionGroup>
@@ -123,9 +125,6 @@ See COPYRIGHTS file for copyright information.
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
-    <PreLinkEvent>
-      <Command>$(GenerateLibCrocoDef)</Command>
-    </PreLinkEvent>
     <Link>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(LibCrocoDllPrefix)$(ProjectName)$(LibCrocoDllSuffix).dll</OutputFile>
@@ -134,7 +133,8 @@ See COPYRIGHTS file for copyright information.
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <ImportLibrary>$(TargetDir)$(ProjectName)-$(LibCrocoApiVersion).lib</ImportLibrary>
+      <ImportLibrary>$(TargetDir)$(ProjectName)-$(ApiVersion).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(TargetDir)$(LibCrocoDllPrefix)$(ProjectName)$(LibCrocoDllSuffix).pdb</ProgramDatabaseFile>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
   </ItemDefinitionGroup>
@@ -154,16 +154,14 @@ See COPYRIGHTS file for copyright information.
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
-    <PreLinkEvent>
-      <Command>$(GenerateLibCrocoDef)</Command>
-    </PreLinkEvent>
     <Link>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(LibCrocoDllPrefix)$(ProjectName)$(LibCrocoDllSuffix).dll</OutputFile>
       <ModuleDefinitionFile>$(IntDir)libcroco.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <ImportLibrary>$(TargetDir)$(ProjectName)-$(LibCrocoApiVersion).lib</ImportLibrary>
+      <ImportLibrary>$(TargetDir)$(ProjectName)-$(ApiVersion).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(TargetDir)$(LibCrocoDllPrefix)$(ProjectName)$(LibCrocoDllSuffix).pdb</ProgramDatabaseFile>
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
   </ItemDefinitionGroup>
@@ -183,9 +181,6 @@ See COPYRIGHTS file for copyright information.
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
-    <PreLinkEvent>
-      <Command>$(GenerateLibCrocoDef)</Command>
-    </PreLinkEvent>
     <Link>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(LibCrocoDllPrefix)$(ProjectName)$(LibCrocoDllSuffix).dll</OutputFile>
@@ -194,37 +189,68 @@ See COPYRIGHTS file for copyright information.
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <ImportLibrary>$(TargetDir)$(ProjectName)-$(LibCrocoApiVersion).lib</ImportLibrary>
+      <ImportLibrary>$(TargetDir)$(ProjectName)-$(ApiVersion).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(TargetDir)$(LibCrocoDllPrefix)$(ProjectName)$(LibCrocoDllSuffix).pdb</ProgramDatabaseFile>
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\cr-utils.c" />
-    <ClCompile Include="..\..\..\src\cr-input.c" />
-    <ClCompile Include="..\..\..\src\cr-enc-handler.c" />
-    <ClCompile Include="..\..\..\src\cr-num.c" />
-    <ClCompile Include="..\..\..\src\cr-rgb.c" />
-    <ClCompile Include="..\..\..\src\cr-token.c" />
-    <ClCompile Include="..\..\..\src\cr-tknzr.c" />
-    <ClCompile Include="..\..\..\src\cr-term.c" />
-    <ClCompile Include="..\..\..\src\cr-attr-sel.c" />
-    <ClCompile Include="..\..\..\src\cr-pseudo.c" />
-    <ClCompile Include="..\..\..\src\cr-additional-sel.c" />
-    <ClCompile Include="..\..\..\src\cr-simple-sel.c" />
-    <ClCompile Include="..\..\..\src\cr-selector.c" />
-    <ClCompile Include="..\..\..\src\cr-doc-handler.c" />
-    <ClCompile Include="..\..\..\src\cr-parser.c" />
-    <ClCompile Include="..\..\..\src\cr-declaration.c" />
-    <ClCompile Include="..\..\..\src\cr-statement.c" />
-    <ClCompile Include="..\..\..\src\cr-stylesheet.c" />
-    <ClCompile Include="..\..\..\src\cr-cascade.c" />
-    <ClCompile Include="..\..\..\src\cr-om-parser.c" />
-    <ClCompile Include="..\..\..\src\cr-style.c" />
-    <ClCompile Include="..\..\..\src\cr-sel-eng.c" />
-    <ClCompile Include="..\..\..\src\cr-fonts.c" />
-    <ClCompile Include="..\..\..\src\cr-prop-list.c" />
-    <ClCompile Include="..\..\..\src\cr-parsing-location.c" />
-    <ClCompile Include="..\..\..\src\cr-string.c" />
+   <ClCompile Include="..\..\..\src\cr-utils.c" />
+   <ClCompile Include="..\..\..\src\cr-input.c" />
+   <ClCompile Include="..\..\..\src\cr-enc-handler.c" />
+   <ClCompile Include="..\..\..\src\cr-num.c" />
+   <ClCompile Include="..\..\..\src\cr-rgb.c" />
+   <ClCompile Include="..\..\..\src\cr-token.c" />
+   <ClCompile Include="..\..\..\src\cr-tknzr.c" />
+   <ClCompile Include="..\..\..\src\cr-term.c" />
+   <ClCompile Include="..\..\..\src\cr-attr-sel.c" />
+   <ClCompile Include="..\..\..\src\cr-pseudo.c" />
+   <ClCompile Include="..\..\..\src\cr-additional-sel.c" />
+   <ClCompile Include="..\..\..\src\cr-simple-sel.c" />
+   <ClCompile Include="..\..\..\src\cr-selector.c" />
+   <ClCompile Include="..\..\..\src\cr-doc-handler.c" />
+   <ClCompile Include="..\..\..\src\cr-parser.c" />
+   <ClCompile Include="..\..\..\src\cr-declaration.c" />
+   <ClCompile Include="..\..\..\src\cr-statement.c" />
+   <ClCompile Include="..\..\..\src\cr-stylesheet.c" />
+   <ClCompile Include="..\..\..\src\cr-cascade.c" />
+   <ClCompile Include="..\..\..\src\cr-om-parser.c" />
+   <ClCompile Include="..\..\..\src\cr-style.c" />
+   <ClCompile Include="..\..\..\src\cr-sel-eng.c" />
+   <ClCompile Include="..\..\..\src\cr-fonts.c" />
+   <ClCompile Include="..\..\..\src\cr-prop-list.c" />
+   <ClCompile Include="..\..\..\src\cr-parsing-location.c" />
+   <ClCompile Include="..\..\..\src\cr-string.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\config.h.win32">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying config.h from config.h.win32...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(CopyConfigH)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\config.h;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Copying config.h from config.h.win32...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(CopyConfigH)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\..\config.h;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Copying config.h from config.h.win32...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(CopyConfigH)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\config.h;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Copying config.h from config.h.win32...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(CopyConfigH)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\..\config.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\libcroco.symbols">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating libcroco.def...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(GenerateLibCrocoDef)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\libcroco.def;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating libcroco.def...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(GenerateLibCrocoDef)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\libcroco.def;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating libcroco.def...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(GenerateLibCrocoDef)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\libcroco.def;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating libcroco.def...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(GenerateLibCrocoDef)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\libcroco.def;%(Outputs)</Outputs>
+    </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

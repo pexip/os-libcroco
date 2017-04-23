@@ -1,7 +1,7 @@
 This package was debianized by Sebastien Bacher <seb128@debian.org> on
 Mon, 12 Apr 2004 12:23:20 +0200.
 
-It was downloaded from http://download.gnome.org/sources/libcroco
+It was downloaded from https://download.gnome.org/sources/libcroco
 
 Upstream Authors:
     Dodji Seketeli <dodji@gnome.org>
@@ -29,4 +29,3 @@ License:
 
 On Debian systems, the complete text of the GNU Lesser General
 Public License can be found in `/usr/share/common-licenses/LGPL'.
-

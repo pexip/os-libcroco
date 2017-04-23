@@ -1,3 +1,43 @@
+libcroco (0.6.11-3) unstable; urgency=medium
+
+  * CVE-2017-7960-heap-buffer-overflow.patch:
+    - CVE-2017-7960: check end of input before reading from buffer.
+  * CVE-2017-7961-double-to-long-check.patch:
+    - CVE-2017-7961: check color value before converting to long.
+  * The above closes: #860961.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 23 Apr 2017 13:17:31 +0200
+
+libcroco (0.6.11-2) unstable; urgency=medium
+
+  * Convert from cdbs to dh.
+  * Bump debhelper compat level to 10.
+  * Enable all hardening build flags.
+  * Enable gtk-doc API documentation and install it in libcroco3-dev.
+  * Bump Standards-Version to 3.9.8.
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 21 Sep 2016 04:15:28 +0200
+
+libcroco (0.6.11-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 18 Dec 2015 17:10:07 +0100
+
+libcroco (0.6.10-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Drop obsolete Breaks/Replaces from pre-wheezy.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 15 Dec 2015 18:02:00 +0100
+
+libcroco (0.6.9-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version to 3.9.6
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 09 Nov 2015 12:50:43 +0100
+
 libcroco (0.6.8-3) unstable; urgency=medium
 
   * Team upload.
@@ -6,7 +46,6 @@ libcroco (0.6.8-3) unstable; urgency=medium
   * Use dh-autoreconf to refresh automake files (ppc64el) (Closes: #754223)
 
   [ Andreas Henriksson ]
-  * Bump Standards-Version to 3.9.5
 
  -- Andreas Henriksson <andreas@fatal.se>  Sun, 17 Aug 2014 11:06:00 +0200
 
