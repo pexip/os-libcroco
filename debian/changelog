@@ -1,3 +1,9 @@
+libcroco (0.6.8-3pexip1) pexip; urgency=medium
+
+  * Prepare Pexip packaging
+
+ -- Vincent Sanders <vince@pexip.com>  Fri, 06 Oct 2017 12:16:06 +0000
+
 libcroco (0.6.8-3) unstable; urgency=medium
 
   * Team upload.

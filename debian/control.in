@@ -1,8 +1,9 @@
 Source: libcroco
 Section: libs
 Priority: optional
-Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
-Uploaders: @GNOME_TEAM@
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+XSBC-Pexip-Original-Uploaders: @GNOME_TEAM@
 Build-Depends: cdbs (>= 0.4.93~),
                debhelper (>= 9),
                dh-autoreconf,
@@ -14,6 +15,7 @@ Build-Depends: cdbs (>= 0.4.93~),
 Standards-Version: 3.9.5
 Vcs-Svn: svn://anonscm.debian.org/pkg-gnome/desktop/unstable/libcroco
 Vcs-Browser: http://anonscm.debian.org/viewvc/pkg-gnome/desktop/unstable/libcroco
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ jessie
 
 Package: libcroco3-dev
 Section: libdevel
