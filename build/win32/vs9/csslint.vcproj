@@ -40,9 +40,9 @@ See COPYRIGHTS file for copyright information.
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			InheritedPropertySheets=".\libcroco.vsprops"
+			InheritedPropertySheets=".\croco-build-defines.vsprops"
 			ConfigurationType="1"
-			CharacterSet="1"
+			CharacterSet="2"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -70,9 +70,9 @@ See COPYRIGHTS file for copyright information.
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			InheritedPropertySheets=".\libcroco.vsprops"
+			InheritedPropertySheets=".\croco-build-defines.vsprops"
 			ConfigurationType="1"
-			CharacterSet="1"
+			CharacterSet="2"
 			WholeProgramOptimization="1"
 			>
 			<Tool
@@ -103,9 +103,9 @@ See COPYRIGHTS file for copyright information.
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			InheritedPropertySheets=".\libcroco.vsprops"
+			InheritedPropertySheets=".\croco-build-defines.vsprops"
 			ConfigurationType="1"
-			CharacterSet="1"
+			CharacterSet="2"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -137,9 +137,9 @@ See COPYRIGHTS file for copyright information.
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			InheritedPropertySheets=".\libcroco.vsprops"
+			InheritedPropertySheets=".\croco-build-defines.vsprops"
 			ConfigurationType="1"
-			CharacterSet="1"
+			CharacterSet="2"
 			WholeProgramOptimization="1"
 			>
 			<Tool

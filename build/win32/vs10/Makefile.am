@@ -16,29 +16,28 @@
 #Author: Fan, Chun-wei
 #See COPYRIGHTS file for copyright information.
 
+GENERATED_ITEMS =	\
+	croco.vcxproj		\
+	croco.vcxproj.filters	\
+	croco-install.props	\
+	croco-version-paths.props
+
 EXTRA_DIST = \
 	croco.vcxprojin			\
 	croco.vcxproj.filtersin	\
-	croco.vcxproj			\
-	croco.vcxproj.filters	\
 	csslint.vcxproj			\
 	csslint.vcxproj.filters	\
-	install.vcxproj			\
+	croco-install.vcxproj	\
 	libcroco.sln			\
-	libcroco.props			\
-	libcroco.props.in		\
-	test0.vcxproj			\
-	test0.vcxproj.filters	\
-	test1.vcxproj			\
-	test1.vcxproj.filters	\
-	test2.vcxproj			\
-	test2.vcxproj.filters	\
-	test3.vcxproj			\
-	test3.vcxproj.filters	\
-	test4.vcxproj			\
-	test4.vcxproj.filters	\
-	test5.vcxproj			\
-	test5.vcxproj.filters	\
-	test6.vcxproj			\
-	test6.vcxproj.filters
+	croco-build-defines.props	\
+	croco-gen-srcs.props	\
+	croco-install.propsin	\
+	croco-version-paths.props.in	\
+	$(GENERATED_ITEMS)
+
+croco-install.props: $(top_srcdir)/build/win32/vs10/croco-install.propsin croco.vs10.headers
+	$(CPP) -P - <$(top_srcdir)/build/win32/vs10/croco-install.propsin > $@
+	rm croco.vs10.headers
+
+DISTCLEANFILES = $(GENERATED_ITEMS)
 

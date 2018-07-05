@@ -126,7 +126,7 @@ lang_pseudo_class_handler (CRSelEng * a_this,
 
         if (strqcmp (a_sel->content.pseudo->name->stryng->str, 
                      "lang", 4)
-            || !a_sel->content.pseudo->type == FUNCTION_PSEUDO) {
+            || a_sel->content.pseudo->type != FUNCTION_PSEUDO) {
                 cr_utils_trace_info ("This handler is for :lang only");
                 return CR_BAD_PSEUDO_CLASS_SEL_HANDLER_ERROR;
         }
@@ -136,9 +136,9 @@ lang_pseudo_class_handler (CRSelEng * a_this,
             || a_sel->content.pseudo->extra->stryng->len < 2)
                 return FALSE;
         for (; node; node = get_next_parent_element_node (node)) {
-                val = xmlGetProp (node, "lang");
+                val = xmlGetProp (node, (const xmlChar *) "lang");
                 if (val
-                    && !strqcmp (val,
+                    && !strqcmp ((const char *) val,
                                  a_sel->content.pseudo->extra->stryng->str,
                                  a_sel->content.pseudo->extra->stryng->len)) {
                         result = TRUE;
@@ -167,7 +167,7 @@ first_child_pseudo_class_handler (CRSelEng * a_this,
 
         if (strcmp (a_sel->content.pseudo->name->stryng->str,
                     "first-child")
-            || !a_sel->content.pseudo->type == IDENT_PSEUDO) {
+            || a_sel->content.pseudo->type != IDENT_PSEUDO) {
                 cr_utils_trace_info ("This handler is for :first-child only");
                 return CR_BAD_PSEUDO_CLASS_SEL_HANDLER_ERROR;
         }
@@ -196,7 +196,7 @@ pseudo_class_add_sel_matches_node (CRSelEng * a_this,
                               && a_node, CR_BAD_PARAM_ERROR);
 
         status = cr_sel_eng_get_pseudo_class_selector_handler
-                (a_this, a_add_sel->content.pseudo->name->stryng->str,
+                (a_this, (guchar *) a_add_sel->content.pseudo->name->stryng->str,
                  a_add_sel->content.pseudo->type, &handler);
         if (status != CR_OK || !handler)
                 return FALSE;
@@ -224,15 +224,15 @@ class_add_sel_matches_node (CRAdditionalSel * a_add_sel, xmlNode * a_node)
                               && a_add_sel->content.class_name->stryng->str
                               && a_node, FALSE);
 
-        if (xmlHasProp (a_node, "class")) {
-                klass = xmlGetProp (a_node, "class");
+        if (xmlHasProp (a_node, (const xmlChar *) "class")) {
+                klass = xmlGetProp (a_node, (const xmlChar *) "class");
                 for (cur = klass; cur && *cur; cur++) {
                         while (cur && *cur
                                && cr_utils_is_white_space (*cur) 
                                == TRUE)
                                 cur++;
 
-                        if (!strncmp (cur, 
+                        if (!strncmp ((const char *) cur, 
                                       a_add_sel->content.class_name->stryng->str,
                                       a_add_sel->content.class_name->stryng->len)) {
                                 cur += a_add_sel->content.class_name->stryng->len;
@@ -278,9 +278,9 @@ id_add_sel_matches_node (CRAdditionalSel * a_add_sel, xmlNode * a_node)
                               && a_add_sel->type == ID_ADD_SELECTOR
                               && a_node, FALSE);
 
-        if (xmlHasProp (a_node, "id")) {
-                id = xmlGetProp (a_node, "id");
-                if (!strqcmp (id, a_add_sel->content.id_name->stryng->str,
+        if (xmlHasProp (a_node, (const xmlChar *) "id")) {
+                id = xmlGetProp (a_node, (const xmlChar *) "id");
+                if (!strqcmp ((const char *) id, a_add_sel->content.id_name->stryng->str,
                               a_add_sel->content.id_name->stryng->len)) {
                         result = TRUE;
                 }
@@ -320,7 +320,7 @@ attr_add_sel_matches_node (CRAdditionalSel * a_add_sel, xmlNode * a_node)
                                 return FALSE;
 
                         if (!xmlHasProp (a_node,
-                                         cur_sel->name->stryng->str))
+                                         (const xmlChar *) cur_sel->name->stryng->str))
                                 return FALSE;
                         break;
 
@@ -338,16 +338,16 @@ attr_add_sel_matches_node (CRAdditionalSel * a_add_sel, xmlNode * a_node)
 
                                 if (!xmlHasProp 
                                     (a_node, 
-                                     cur_sel->name->stryng->str))
+                                     (const xmlChar *) cur_sel->name->stryng->str))
                                         return FALSE;
 
                                 value = xmlGetProp 
                                         (a_node,
-                                         cur_sel->name->stryng->str);
+                                         (const xmlChar *) cur_sel->name->stryng->str);
 
                                 if (value
                                     && strcmp 
-                                    (value, 
+                                    ((const char *) value, 
                                      cur_sel->value->stryng->str)) {
                                         xmlFree (value);
                                         return FALSE;
@@ -366,11 +366,11 @@ attr_add_sel_matches_node (CRAdditionalSel * a_add_sel, xmlNode * a_node)
 
                                 if (!xmlHasProp 
                                     (a_node, 
-                                     cur_sel->name->stryng->str))
+                                     (const xmlChar *) cur_sel->name->stryng->str))
                                         return FALSE;
                                 value = xmlGetProp 
                                         (a_node,
-                                         cur_sel->name->stryng->str);
+                                         (const xmlChar *) cur_sel->name->stryng->str);
 
                                 if (!value)
                                         return FALSE;
@@ -402,7 +402,7 @@ attr_add_sel_matches_node (CRAdditionalSel * a_add_sel, xmlNode * a_node)
                                         ptr2 = cur;
 
                                         if (!strncmp
-                                            (ptr1, 
+                                            ((const char *) ptr1, 
                                              cur_sel->value->stryng->str,
                                              ptr2 - ptr1 + 1)) {
                                                 found = TRUE;
@@ -429,11 +429,11 @@ attr_add_sel_matches_node (CRAdditionalSel * a_add_sel, xmlNode * a_node)
 
                                 if (!xmlHasProp 
                                     (a_node, 
-                                     cur_sel->name->stryng->str))
+                                     (const xmlChar *) cur_sel->name->stryng->str))
                                         return FALSE;
                                 value = xmlGetProp 
                                         (a_node,
-                                         cur_sel->name->stryng->str);
+                                         (const xmlChar *) cur_sel->name->stryng->str);
 
                                 /*
                                  *here, make sure value is an hyphen
@@ -451,7 +451,7 @@ attr_add_sel_matches_node (CRAdditionalSel * a_add_sel, xmlNode * a_node)
                                         ptr2 = cur;
 
                                         if (g_strstr_len
-                                            (ptr1, ptr2 - ptr1 + 1,
+                                            ((const gchar *) ptr1, ptr2 - ptr1 + 1,
                                              cur_sel->value->stryng->str)
                                             == (gchar *) ptr1) {
                                                 found = TRUE;
@@ -653,7 +653,7 @@ sel_matches_node_real (CRSelEng * a_this, CRSimpleSel * a_sel,
                          && cur_sel->name->stryng
                          && cur_sel->name->stryng->str)
                      && (!strcmp (cur_sel->name->stryng->str,
-                                  cur_node->name)))
+                                  (const char *) cur_node->name)))
                     || (cur_sel->type_mask & UNIVERSAL_SELECTOR)) {
                         /*
                          *this simple selector
@@ -1180,7 +1180,7 @@ cr_sel_eng_register_pseudo_class_sel_handler (CRSelEng * a_this,
         }
         memset (handler_entry, 0,
                 sizeof (struct CRPseudoClassSelHandlerEntry));
-        handler_entry->name = g_strdup (a_name);
+        handler_entry->name = (guchar *) g_strdup ((const gchar *) a_name);
         handler_entry->type = a_type;
         handler_entry->handler = a_handler;
         list = g_list_append (PRIVATE (a_this)->pcs_handlers, handler_entry);
@@ -1206,7 +1206,7 @@ cr_sel_eng_unregister_pseudo_class_sel_handler (CRSelEng * a_this,
         for (elem = PRIVATE (a_this)->pcs_handlers;
              elem; elem = g_list_next (elem)) {
                 entry = elem->data;
-                if (!strcmp (entry->name, a_name)
+                if (!strcmp ((const char *) entry->name, (const char *) a_name)
                     && entry->type == a_type) {
                         found = TRUE;
                         break;
@@ -1279,7 +1279,7 @@ cr_sel_eng_get_pseudo_class_selector_handler (CRSelEng * a_this,
         for (elem = PRIVATE (a_this)->pcs_handlers;
              elem; elem = g_list_next (elem)) {
                 entry = elem->data;
-                if (!strcmp (a_name, entry->name)
+                if (!strcmp ((const char *) a_name, (const char *) entry->name)
                     && entry->type == a_type) {
                         found = TRUE;
                         break;
