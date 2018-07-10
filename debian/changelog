@@ -1,3 +1,9 @@
+libcroco (0.6.11-3pexip1) pexip; urgency=medium
+
+  * Migrate to Stretch
+
+ -- John-Mark Bell <jmb@pexip.com>  Tue, 10 Jul 2018 11:12:51 +0000
+
 libcroco (0.6.11-3) unstable; urgency=medium
 
   * CVE-2017-7960-heap-buffer-overflow.patch:
