@@ -112,7 +112,7 @@ cr_term_parse_expression_from_buf (const guchar * a_buf,
 
         g_return_val_if_fail (a_buf, NULL);
 
-        parser = cr_parser_new_from_buf ((guchar*)a_buf, strlen (a_buf),
+        parser = cr_parser_new_from_buf ((guchar*)a_buf, strlen ((const char *) a_buf),
                                          a_encoding, FALSE);
         g_return_val_if_fail (parser, NULL);
 
@@ -334,7 +334,7 @@ cr_term_to_string (CRTerm const * a_this)
                         }
 
                         if (content) {
-                                g_string_append (str_buf, content);
+                                g_string_append (str_buf, (const gchar *) content);
                                 g_free (content);
                                 content = NULL;
                         }
@@ -343,7 +343,7 @@ cr_term_to_string (CRTerm const * a_this)
 
                 case TERM_FUNCTION:
                         if (cur->content.str) {
-                                content = g_strndup
+                                content = (guchar *) g_strndup
                                         (cur->content.str->stryng->str,
                                          cur->content.str->stryng->len);
                         }
@@ -361,22 +361,21 @@ cr_term_to_string (CRTerm const * a_this)
 
                                         if (tmp_str) {
                                                 g_string_append (str_buf, 
-								 tmp_str);
+								 (const gchar *) tmp_str);
                                                 g_free (tmp_str);
                                                 tmp_str = NULL;
                                         }
-
-                                        g_free (content);
-                                        content = NULL;
                                 }
                                 g_string_append (str_buf, ")");
+                                g_free (content);
+                                content = NULL;
                         }
 
                         break;
 
                 case TERM_STRING:
                         if (cur->content.str) {
-                                content = g_strndup
+                                content = (guchar *) g_strndup
                                         (cur->content.str->stryng->str,
                                          cur->content.str->stryng->len);
                         }
@@ -391,13 +390,13 @@ cr_term_to_string (CRTerm const * a_this)
 
                 case TERM_IDENT:
                         if (cur->content.str) {
-                                content = g_strndup
+                                content = (guchar *) g_strndup
                                         (cur->content.str->stryng->str,
                                          cur->content.str->stryng->len);
                         }
 
                         if (content) {
-                                g_string_append (str_buf, content);
+                                g_string_append (str_buf, (const gchar *) content);
                                 g_free (content);
                                 content = NULL;
                         }
@@ -405,7 +404,7 @@ cr_term_to_string (CRTerm const * a_this)
 
                 case TERM_URI:
                         if (cur->content.str) {
-                                content = g_strndup
+                                content = (guchar *) g_strndup
                                         (cur->content.str->stryng->str,
                                          cur->content.str->stryng->len);
                         }
@@ -426,7 +425,7 @@ cr_term_to_string (CRTerm const * a_this)
                                 tmp_str = cr_rgb_to_string (cur->content.rgb);
 
                                 if (tmp_str) {
-                                        g_string_append (str_buf, tmp_str);
+                                        g_string_append (str_buf, (const gchar *) tmp_str);
                                         g_free (tmp_str);
                                         tmp_str = NULL;
                                 }
@@ -443,7 +442,7 @@ cr_term_to_string (CRTerm const * a_this)
 
                 case TERM_HASH:
                         if (cur->content.str) {
-                                content = g_strndup
+                                content = (guchar *) g_strndup
                                         (cur->content.str->stryng->str,
                                          cur->content.str->stryng->len);
                         }
@@ -464,7 +463,7 @@ cr_term_to_string (CRTerm const * a_this)
         }
 
         if (str_buf) {
-                result = str_buf->str;
+                result =(guchar *) str_buf->str;
                 g_string_free (str_buf, FALSE);
                 str_buf = NULL;
         }
@@ -529,7 +528,7 @@ cr_term_one_to_string (CRTerm const * a_this)
                 }
 
                 if (content) {
-                        g_string_append (str_buf, content);
+                        g_string_append (str_buf, (const gchar *) content);
                         g_free (content);
                         content = NULL;
                 }
@@ -538,7 +537,7 @@ cr_term_one_to_string (CRTerm const * a_this)
 
         case TERM_FUNCTION:
                 if (a_this->content.str) {
-                        content = g_strndup
+                        content = (guchar *) g_strndup
                                 (a_this->content.str->stryng->str,
                                  a_this->content.str->stryng->len);
                 }
@@ -572,7 +571,7 @@ cr_term_one_to_string (CRTerm const * a_this)
 
         case TERM_STRING:
                 if (a_this->content.str) {
-                        content = g_strndup
+                        content = (guchar *) g_strndup
                                 (a_this->content.str->stryng->str,
                                  a_this->content.str->stryng->len);
                 }
@@ -587,13 +586,13 @@ cr_term_one_to_string (CRTerm const * a_this)
 
         case TERM_IDENT:
                 if (a_this->content.str) {
-                        content = g_strndup
+                        content = (guchar *) g_strndup
                                 (a_this->content.str->stryng->str,
                                  a_this->content.str->stryng->len);
                 }
 
                 if (content) {
-                        g_string_append (str_buf, content);
+                        g_string_append (str_buf, (const gchar *) content);
                         g_free (content);
                         content = NULL;
                 }
@@ -601,7 +600,7 @@ cr_term_one_to_string (CRTerm const * a_this)
 
         case TERM_URI:
                 if (a_this->content.str) {
-                        content = g_strndup
+                        content = (guchar *) g_strndup
                                 (a_this->content.str->stryng->str,
                                  a_this->content.str->stryng->len);
                 }
@@ -622,7 +621,7 @@ cr_term_one_to_string (CRTerm const * a_this)
                         tmp_str = cr_rgb_to_string (a_this->content.rgb);
 
                         if (tmp_str) {
-                                g_string_append (str_buf, tmp_str);
+                                g_string_append (str_buf, (const gchar *) tmp_str);
                                 g_free (tmp_str);
                                 tmp_str = NULL;
                         }
@@ -639,7 +638,7 @@ cr_term_one_to_string (CRTerm const * a_this)
 
         case TERM_HASH:
                 if (a_this->content.str) {
-                        content = g_strndup
+                        content = (guchar *) g_strndup
                                 (a_this->content.str->stryng->str,
                                  a_this->content.str->stryng->len);
                 }
@@ -660,7 +659,7 @@ cr_term_one_to_string (CRTerm const * a_this)
         }
 
         if (str_buf) {
-                result = str_buf->str;
+                result = (guchar *) str_buf->str;
                 g_string_free (str_buf, FALSE);
                 str_buf = NULL;
         }

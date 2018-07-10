@@ -1,0 +1,2 @@
+CVE-2017-7960-heap-buffer-overflow.patch
+CVE-2017-7961-double-to-long-check.patch

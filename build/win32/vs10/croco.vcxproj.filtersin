@@ -34,6 +34,10 @@ See COPYRIGHTS file for copyright information.
     </Filter>
   </ItemGroup>
   <ItemGroup>
-#include "libcroco.vs10.sourcefiles.filters"
+#include "croco.vs10.sourcefiles.filters"
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\config.h.win32"><Filter>Resource Files</Filter></CustomBuild>
+    <CustomBuild Include="..\..\..\src\libcroco.symbols"><Filter>Resource Files</Filter></CustomBuild>
   </ItemGroup>
 </Project>

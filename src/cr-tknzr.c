@@ -195,7 +195,7 @@ CHECK_PARSING_STATUS (status, TRUE) ;
  */
 #define SKIP_CHARS(a_tknzr, a_nb_chars) \
 { \
-glong nb_chars = a_nb_chars ; \
+gulong nb_chars = a_nb_chars ; \
 status = cr_input_consume_chars \
      (PRIVATE (a_tknzr)->input,0, &nb_chars) ; \
 CHECK_PARSING_STATUS (status, TRUE) ; \
@@ -408,7 +408,7 @@ cr_tknzr_try_to_skip_spaces (CRTknzr * a_this)
         }
 
         if (cr_utils_is_white_space (cur_char) == TRUE) {
-                glong nb_chars = -1; /*consume all spaces */
+                gulong nb_chars = -1; /*consume all spaces */
 
                 status = cr_input_consume_white_spaces
                         (PRIVATE (a_this)->input, &nb_chars);
@@ -1639,7 +1639,7 @@ cr_tknzr_new_from_uri (const guchar * a_file_uri,
         CRTknzr *result = NULL;
         CRInput *input = NULL;
 
-        input = cr_input_new_from_uri (a_file_uri, a_enc);
+        input = cr_input_new_from_uri ((const gchar *) a_file_uri, a_enc);
         g_return_val_if_fail (input != NULL, NULL);
 
         result = cr_tknzr_new (input);
@@ -1901,6 +1901,8 @@ cr_tknzr_seek_index (CRTknzr * a_this, enum CRSeekPos a_origin, gint a_pos)
 enum CRStatus
 cr_tknzr_consume_chars (CRTknzr * a_this, guint32 a_char, glong * a_nb_char)
 {
+	gulong consumed = *(gulong *) a_nb_char;
+	enum CRStatus status;
         g_return_val_if_fail (a_this && PRIVATE (a_this)
                               && PRIVATE (a_this)->input, CR_BAD_PARAM_ERROR);
 
@@ -1911,8 +1913,10 @@ cr_tknzr_consume_chars (CRTknzr * a_this, guint32 a_char, glong * a_nb_char)
                 PRIVATE (a_this)->token_cache = NULL;
         }
 
-        return cr_input_consume_chars (PRIVATE (a_this)->input,
-                                       a_char, a_nb_char);
+        status = cr_input_consume_chars (PRIVATE (a_this)->input,
+                                         a_char, &consumed);
+	*a_nb_char = (glong) consumed;
+	return status;
 }
 
 enum CRStatus
@@ -2100,15 +2104,15 @@ cr_tknzr_get_next_token (CRTknzr * a_this, CRToken ** a_tk)
                 if (BYTE (input, 2, NULL) == 'r'
                     && BYTE (input, 3, NULL) == 'l'
                     && BYTE (input, 4, NULL) == '(') {
-                        CRString *str = NULL;
+                        CRString *str2 = NULL;
 
-                        status = cr_tknzr_parse_uri (a_this, &str);
+                        status = cr_tknzr_parse_uri (a_this, &str2);
                         if (status == CR_OK) {
-                                status = cr_token_set_uri (token, str);
+                                status = cr_token_set_uri (token, str2);
                                 CHECK_PARSING_STATUS (status, TRUE);
-                                if (str) {
+                                if (str2) {
                                         cr_parsing_location_copy (&token->location,
-                                                                  &str->location) ;
+                                                                  &str2->location) ;
                                 }
                                 goto done;
                         }
@@ -2381,7 +2385,7 @@ cr_tknzr_get_next_token (CRTknzr * a_this, CRToken ** a_tk)
                                 next_bytes[0] = BYTE (input, 1, NULL);
                                 next_bytes[1] = BYTE (input, 2, NULL);
                                 next_bytes[2] = BYTE (input, 3, NULL);
-                                next_bytes[3] = BYTE (input, 3, NULL);
+                                next_bytes[3] = BYTE (input, 4, NULL);
 
                                 if (next_bytes[0] == 'e'
                                     && next_bytes[1] == 'm') {

@@ -2,30 +2,26 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>cr-doc-handler</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<title>cr-doc-handler: Libcroco Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Libcroco Reference Manual">
 <link rel="up" href="ch01.html" title="Extensive APIs description">
 <link rel="prev" href="libcroco-cr-declaration.html" title="cr-declaration">
 <link rel="next" href="libcroco-cr-enc-handler.html" title="cr-enc-handler">
-<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="libcroco-cr-declaration.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">Libcroco Reference Manual</th>
-<td><a accesskey="n" href="libcroco-cr-enc-handler.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#libcroco-cr-doc-handler.synopsis" class="shortcut">Top</a>
-                   | 
-                  <a href="#libcroco-cr-doc-handler.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libcroco-cr-doc-handler.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="libcroco-cr-declaration.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="libcroco-cr-enc-handler.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="libcroco-cr-doc-handler"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -33,37 +29,363 @@
 <h2><span class="refentrytitle"><a name="libcroco-cr-doc-handler.top_of_page"></a>cr-doc-handler</span></h2>
 <p>cr-doc-handler</p>
 </td>
-<td valign="top" align="right"></td>
+<td class="gallery_image" valign="top" align="right"></td>
 </tr></table></div>
-<div class="refsynopsisdiv">
-<a name="libcroco-cr-doc-handler.synopsis"></a><h2>Synopsis</h2>
-<pre class="synopsis">struct              <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler">CRDocHandler</a>;
-                    <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandlerPriv" title="CRDocHandlerPriv">CRDocHandlerPriv</a>;
-<span class="returnvalue">void</span>                <a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-associate-a-parser" title="cr_doc_handler_associate_a_parser ()">cr_doc_handler_associate_a_parser</a>   (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> a_parser</code></em>);
-<span class="returnvalue">void</span>                <a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-destroy" title="cr_doc_handler_destroy ()">cr_doc_handler_destroy</a>              (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>);
-enum <span class="returnvalue">CRStatus</span>       <a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-get-ctxt" title="cr_doc_handler_get_ctxt ()">cr_doc_handler_get_ctxt</a>             (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> const *a_this</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> *a_ctxt</code></em>);
-enum <span class="returnvalue">CRStatus</span>       <a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-get-result" title="cr_doc_handler_get_result ()">cr_doc_handler_get_result</a>           (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> const *a_this</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> *a_result</code></em>);
-<a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="returnvalue">CRDocHandler</span></a> *      <a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-new" title="cr_doc_handler_new ()">cr_doc_handler_new</a>                  (<em class="parameter"><code><span class="type">void</span></code></em>);
-<span class="returnvalue">void</span>                <a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-ref" title="cr_doc_handler_ref ()">cr_doc_handler_ref</a>                  (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>);
-enum <span class="returnvalue">CRStatus</span>       <a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-set-ctxt" title="cr_doc_handler_set_ctxt ()">cr_doc_handler_set_ctxt</a>             (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> a_ctxt</code></em>);
-enum <span class="returnvalue">CRStatus</span>       <a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-set-default-sac-handler" title="cr_doc_handler_set_default_sac_handler ()">cr_doc_handler_set_default_sac_handler</a>
-                                                        (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>);
-enum <span class="returnvalue">CRStatus</span>       <a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-set-result" title="cr_doc_handler_set_result ()">cr_doc_handler_set_result</a>           (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> a_result</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-unref" title="cr_doc_handler_unref ()">cr_doc_handler_unref</a>                (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>);
-</pre>
+<div class="refsect1">
+<a name="libcroco-cr-doc-handler.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="returnvalue">CRDocHandler</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-new" title="cr_doc_handler_new ()">cr_doc_handler_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">enum <a class="link" href="libcroco-cr-utils.html#CRStatus" title="enum CRStatus"><span class="returnvalue">CRStatus</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-set-result" title="cr_doc_handler_set_result ()">cr_doc_handler_set_result</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">enum <a class="link" href="libcroco-cr-utils.html#CRStatus" title="enum CRStatus"><span class="returnvalue">CRStatus</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-get-result" title="cr_doc_handler_get_result ()">cr_doc_handler_get_result</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">enum <a class="link" href="libcroco-cr-utils.html#CRStatus" title="enum CRStatus"><span class="returnvalue">CRStatus</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-set-ctxt" title="cr_doc_handler_set_ctxt ()">cr_doc_handler_set_ctxt</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">enum <a class="link" href="libcroco-cr-utils.html#CRStatus" title="enum CRStatus"><span class="returnvalue">CRStatus</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-get-ctxt" title="cr_doc_handler_get_ctxt ()">cr_doc_handler_get_ctxt</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">enum <a class="link" href="libcroco-cr-utils.html#CRStatus" title="enum CRStatus"><span class="returnvalue">CRStatus</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-set-default-sac-handler" title="cr_doc_handler_set_default_sac_handler ()">cr_doc_handler_set_default_sac_handler</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-associate-a-parser" title="cr_doc_handler_associate_a_parser ()">cr_doc_handler_associate_a_parser</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-ref" title="cr_doc_handler_ref ()">cr_doc_handler_ref</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-unref" title="cr_doc_handler_unref ()">cr_doc_handler_unref</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="libcroco-cr-doc-handler.html#cr-doc-handler-destroy" title="cr_doc_handler_destroy ()">cr_doc_handler_destroy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="libcroco-cr-doc-handler.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler">CRDocHandler</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandlerPriv" title="CRDocHandlerPriv">CRDocHandlerPriv</a></td>
+</tr>
+</tbody>
+</table></div>
 </div>
 <div class="refsect1">
 <a name="libcroco-cr-doc-handler.description"></a><h2>Description</h2>
-<p>
-</p>
 </div>
 <div class="refsect1">
-<a name="libcroco-cr-doc-handler.details"></a><h2>Details</h2>
+<a name="libcroco-cr-doc-handler.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="cr-doc-handler-new"></a><h3>cr_doc_handler_new ()</h3>
+<pre class="programlisting"><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="returnvalue">CRDocHandler</span></a> *
+cr_doc_handler_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>Returns the newly built instance of
+<a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cr-doc-handler-set-result"></a><h3>cr_doc_handler_set_result ()</h3>
+<pre class="programlisting">enum <a class="link" href="libcroco-cr-utils.html#CRStatus" title="enum CRStatus"><span class="returnvalue">CRStatus</span></a>
+cr_doc_handler_set_result (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>,
+                           <em class="parameter"><code><span class="type">gpointer</span> a_result</code></em>);</pre>
+<p>Sets the private parsing context.
+This is used by libcroco only.</p>
+<p>Returns CR_OK upon successfull completion, an error code otherwise.</p>
+<div class="refsect3">
+<a name="id-1.2.6.6.3.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>a_this</p></td>
+<td class="parameter_description"><p>the current instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>a_result</p></td>
+<td class="parameter_description"><p>the new result.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cr-doc-handler-get-result"></a><h3>cr_doc_handler_get_result ()</h3>
+<pre class="programlisting">enum <a class="link" href="libcroco-cr-utils.html#CRStatus" title="enum CRStatus"><span class="returnvalue">CRStatus</span></a>
+cr_doc_handler_get_result (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> const *a_this</code></em>,
+                           <em class="parameter"><code><span class="type">gpointer</span> *a_result</code></em>);</pre>
+<p>Gets the private parsing result.
+The private parsing result is used by libcroco only.</p>
+<p>Returns CR_OK upon successfull completion, an error code otherwise.</p>
+<div class="refsect3">
+<a name="id-1.2.6.6.4.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>a_this</p></td>
+<td class="parameter_description"><p>the current instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>a_result</p></td>
+<td class="parameter_description"><p>out parameter. The returned result.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cr-doc-handler-set-ctxt"></a><h3>cr_doc_handler_set_ctxt ()</h3>
+<pre class="programlisting">enum <a class="link" href="libcroco-cr-utils.html#CRStatus" title="enum CRStatus"><span class="returnvalue">CRStatus</span></a>
+cr_doc_handler_set_ctxt (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>,
+                         <em class="parameter"><code><span class="type">gpointer</span> a_ctxt</code></em>);</pre>
+<p>Sets the private parsing context.
+This is used by libcroco only.
+Returns CR_OK upon successfull completion, an error code otherwise.</p>
+<div class="refsect3">
+<a name="id-1.2.6.6.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>a_this</p></td>
+<td class="parameter_description"><p>the current instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>a_ctxt</p></td>
+<td class="parameter_description"><p>a pointer to the parsing context.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cr-doc-handler-get-ctxt"></a><h3>cr_doc_handler_get_ctxt ()</h3>
+<pre class="programlisting">enum <a class="link" href="libcroco-cr-utils.html#CRStatus" title="enum CRStatus"><span class="returnvalue">CRStatus</span></a>
+cr_doc_handler_get_ctxt (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> const *a_this</code></em>,
+                         <em class="parameter"><code><span class="type">gpointer</span> *a_ctxt</code></em>);</pre>
+<p>Gets the private parsing context associated to the document handler
+The private parsing context is used by libcroco only.</p>
+<p>Returns CR_OK upon successfull completion, an error code otherwise.</p>
+<div class="refsect3">
+<a name="id-1.2.6.6.6.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>a_this</p></td>
+<td class="parameter_description"><p>the current instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>a_ctxt</p></td>
+<td class="parameter_description"><p>out parameter. The new parsing context.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cr-doc-handler-set-default-sac-handler"></a><h3>cr_doc_handler_set_default_sac_handler ()</h3>
+<pre class="programlisting">enum <a class="link" href="libcroco-cr-utils.html#CRStatus" title="enum CRStatus"><span class="returnvalue">CRStatus</span></a>
+cr_doc_handler_set_default_sac_handler
+                               (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>);</pre>
+<p>Sets the sac handlers contained in the current
+instance of DocHandler to the default handlers.
+For the time being the default handlers are
+test handlers. This is expected to change in a
+near future, when the libcroco gets a bit debugged.</p>
+<p>Returns CR_OK upon successfull completion, an error code otherwise.</p>
+<div class="refsect3">
+<a name="id-1.2.6.6.7.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>a_this</p></td>
+<td class="parameter_description"><p>a pointer to the current instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cr-doc-handler-associate-a-parser"></a><h3>cr_doc_handler_associate_a_parser ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+cr_doc_handler_associate_a_parser (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>,
+                                   <em class="parameter"><code><span class="type">gpointer</span> a_parser</code></em>);</pre>
+<p><em class="parameter"><code>a_this</code></em>
+: the current instance of document handler.
+<em class="parameter"><code>a_parser</code></em>
+: the parser to associate.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cr-doc-handler-ref"></a><h3>cr_doc_handler_ref ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+cr_doc_handler_ref (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>);</pre>
+<div class="refsect3">
+<a name="id-1.2.6.6.9.4"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>a_this</p></td>
+<td class="parameter_description"><p>the current instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cr-doc-handler-unref"></a><h3>cr_doc_handler_unref ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+cr_doc_handler_unref (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>);</pre>
+<p>Decreases the ref count of the current instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a>.
+If the ref count reaches '0' then, destroys the instance.</p>
+<p>Returns TRUE if the instance as been destroyed, FALSE otherwise.</p>
+<div class="refsect3">
+<a name="id-1.2.6.6.10.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>a_this</p></td>
+<td class="parameter_description"><p>the currrent instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a>.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="cr-doc-handler-destroy"></a><h3>cr_doc_handler_destroy ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+cr_doc_handler_destroy (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>);</pre>
+<p>The destructor of the <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> class.</p>
+<div class="refsect3">
+<a name="id-1.2.6.6.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>a_this</p></td>
+<td class="parameter_description"><p>the instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> to
+destroy.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="libcroco-cr-doc-handler.other_details"></a><h2>Types and Values</h2>
 <div class="refsect2">
 <a name="CRDocHandler"></a><h3>struct CRDocHandler</h3>
 <pre class="programlisting">struct CRDocHandler {
@@ -287,231 +609,15 @@ enum <span class="returnvalue">CRStatus</span>       <a class="link" href="libcr
 	gulong ref_count ;
 };
 </pre>
-<p>
-</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="CRDocHandlerPriv"></a><h3>CRDocHandlerPriv</h3>
 <pre class="programlisting">typedef struct _CRDocHandlerPriv CRDocHandlerPriv;</pre>
-<p>
-</p>
-</div>
-<hr>
-<div class="refsect2">
-<a name="cr-doc-handler-associate-a-parser"></a><h3>cr_doc_handler_associate_a_parser ()</h3>
-<pre class="programlisting"><span class="returnvalue">void</span>                cr_doc_handler_associate_a_parser   (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> a_parser</code></em>);</pre>
-<p>
-<em class="parameter"><code>a_this</code></em>: the current instance of document handler.
-<em class="parameter"><code>a_parser</code></em>: the parser to associate.
-</p>
-</div>
-<hr>
-<div class="refsect2">
-<a name="cr-doc-handler-destroy"></a><h3>cr_doc_handler_destroy ()</h3>
-<pre class="programlisting"><span class="returnvalue">void</span>                cr_doc_handler_destroy              (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>);</pre>
-<p>
-The destructor of the <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> class.
-</p>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
-<tbody><tr>
-<td><p><span class="term"><em class="parameter"><code>a_this</code></em> :</span></p></td>
-<td>the instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> to
-destroy.</td>
-</tr></tbody>
-</table></div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="cr-doc-handler-get-ctxt"></a><h3>cr_doc_handler_get_ctxt ()</h3>
-<pre class="programlisting">enum <span class="returnvalue">CRStatus</span>       cr_doc_handler_get_ctxt             (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> const *a_this</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> *a_ctxt</code></em>);</pre>
-<p>
-Gets the private parsing context associated to the document handler
-The private parsing context is used by libcroco only.
-</p>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
-<tbody>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>a_this</code></em> :</span></p></td>
-<td>the current instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a>.</td>
-</tr>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>a_ctxt</code></em> :</span></p></td>
-<td>out parameter. The new parsing context.</td>
-</tr>
-<tr>
-<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>CR_OK upon successfull completion, an error code otherwise.</td>
-</tr>
-</tbody>
-</table></div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="cr-doc-handler-get-result"></a><h3>cr_doc_handler_get_result ()</h3>
-<pre class="programlisting">enum <span class="returnvalue">CRStatus</span>       cr_doc_handler_get_result           (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> const *a_this</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> *a_result</code></em>);</pre>
-<p>
-Gets the private parsing result.
-The private parsing result is used by libcroco only.
-</p>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
-<tbody>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>a_this</code></em> :</span></p></td>
-<td>the current instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a>
-</td>
-</tr>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>a_result</code></em> :</span></p></td>
-<td>out parameter. The returned result.</td>
-</tr>
-<tr>
-<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>CR_OK upon successfull completion, an error code otherwise.</td>
-</tr>
-</tbody>
-</table></div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="cr-doc-handler-new"></a><h3>cr_doc_handler_new ()</h3>
-<pre class="programlisting"><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="returnvalue">CRDocHandler</span></a> *      cr_doc_handler_new                  (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
-<tbody><tr>
-<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the newly built instance of
-<a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a>
-</td>
-</tr></tbody>
-</table></div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="cr-doc-handler-ref"></a><h3>cr_doc_handler_ref ()</h3>
-<pre class="programlisting"><span class="returnvalue">void</span>                cr_doc_handler_ref                  (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>);</pre>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
-<tbody><tr>
-<td><p><span class="term"><em class="parameter"><code>a_this</code></em> :</span></p></td>
-<td>the current instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a>.</td>
-</tr></tbody>
-</table></div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="cr-doc-handler-set-ctxt"></a><h3>cr_doc_handler_set_ctxt ()</h3>
-<pre class="programlisting">enum <span class="returnvalue">CRStatus</span>       cr_doc_handler_set_ctxt             (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> a_ctxt</code></em>);</pre>
-<p>
-Sets the private parsing context.
-This is used by libcroco only.
-</p>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
-<tbody>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>a_this</code></em> :</span></p></td>
-<td>the current instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a>
-</td>
-</tr>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>a_ctxt</code></em> :</span></p></td>
-<td>a pointer to the parsing context.</td>
-</tr>
-<tr>
-<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>CR_OK upon successfull completion, an error code otherwise.</td>
-</tr>
-</tbody>
-</table></div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="cr-doc-handler-set-default-sac-handler"></a><h3>cr_doc_handler_set_default_sac_handler ()</h3>
-<pre class="programlisting">enum <span class="returnvalue">CRStatus</span>       cr_doc_handler_set_default_sac_handler
-                                                        (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>);</pre>
-<p>
-Sets the sac handlers contained in the current
-instance of DocHandler to the default handlers.
-For the time being the default handlers are
-test handlers. This is expected to change in a
-near future, when the libcroco gets a bit debugged.
-</p>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
-<tbody>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>a_this</code></em> :</span></p></td>
-<td>a pointer to the current instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a>.</td>
-</tr>
-<tr>
-<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>CR_OK upon successfull completion, an error code otherwise.</td>
-</tr>
-</tbody>
-</table></div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="cr-doc-handler-set-result"></a><h3>cr_doc_handler_set_result ()</h3>
-<pre class="programlisting">enum <span class="returnvalue">CRStatus</span>       cr_doc_handler_set_result           (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> a_result</code></em>);</pre>
-<p>
-Sets the private parsing context.
-This is used by libcroco only.
-</p>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
-<tbody>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>a_this</code></em> :</span></p></td>
-<td>the current instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a>
-</td>
-</tr>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>a_result</code></em> :</span></p></td>
-<td>the new result.</td>
-</tr>
-<tr>
-<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>CR_OK upon successfull completion, an error code otherwise.</td>
-</tr>
-</tbody>
-</table></div>
-</div>
-<hr>
-<div class="refsect2">
-<a name="cr-doc-handler-unref"></a><h3>cr_doc_handler_unref ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            cr_doc_handler_unref                (<em class="parameter"><code><a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a> *a_this</code></em>);</pre>
-<p>
-Decreases the ref count of the current instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a>.
-If the ref count reaches '0' then, destroys the instance.
-</p>
-<div class="variablelist"><table border="0">
-<col align="left" valign="top">
-<tbody>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>a_this</code></em> :</span></p></td>
-<td>the currrent instance of <a class="link" href="libcroco-cr-doc-handler.html#CRDocHandler" title="struct CRDocHandler"><span class="type">CRDocHandler</span></a>.</td>
-</tr>
-<tr>
-<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>TRUE if the instance as been destroyed, FALSE otherwise.</td>
-</tr>
-</tbody>
-</table></div>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.18</div>
+<hr>Generated by GTK-Doc V1.24.1</div>
 </body>
 </html>

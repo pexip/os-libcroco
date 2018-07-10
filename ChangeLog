@@ -1,3 +1,880 @@
+commit d8a1a160186a45a5852abc06916f9e452ace9e00
+Author: Ignacio Casal Quinteiro <icq@gnome.org>
+Date:   Thu Dec 17 14:02:15 2015 +0100
+
+    Release 0.6.11
+
+ NEWS | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit f4f9e6d897bcb7dff768dda66a9e62c80137d7f5
+Author: Florian Müllner <fmuellner@gnome.org>
+Date:   Thu Dec 17 00:32:09 2015 +0100
+
+    Fix regression in cr_tknzr_consume_chars()
+    
+    Commit bc9b2c339e introduced an intermediate variable to account
+    for the difference in signedness between cr_tknzr_consume_chars()
+    and cr_input_consume_chars(), but missed that the variable in
+    question is an in-out variable that requires proper initialization.
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=759565
+
+ src/cr-tknzr.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 387857601cf0cbbac468e0f2620daca5d2a8c095
+Author: Marek Chalupa <mchqwerty@gmail.com>
+Date:   Tue Dec 15 17:58:52 2015 +0100
+
+    Fix comparison warning
+    
+    Logical ! was only applied to the left side of the comparison
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=758394
+
+ src/cr-sel-eng.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 1e3112a925e09a1f54a30af2e2c0cfb85d139100
+Author: Ignacio Casal Quinteiro <icq@gnome.org>
+Date:   Sun Dec 13 19:27:07 2015 +0100
+
+    Post release version bump
+
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit ef5d47e32dcbcd2ec181b23021e583720902f199
+Author: Ignacio Casal Quinteiro <icq@gnome.org>
+Date:   Sun Dec 13 19:25:48 2015 +0100
+
+    Release 0.6.10
+
+ NEWS | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 956078a3cf703b3de5117659a50fae1bc00e8c20
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Sat Oct 31 22:47:43 2015 +0000
+
+    Fix unused status variable in main()
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=710076
+
+ csslint/csslint.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f09307d1d467e0c25bd6f00bd689fdd5b858a360
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Sat Oct 31 22:45:46 2015 +0000
+
+    Fix unused status variable in evaluate_selectors()
+    
+    * Add an end label to go to on error
+    * Clean up xml_doc at the end
+    * Fix a miscleaning of xpath_object
+    * Unref sheets after they are given to a cascade
+    * Return status at the end
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=710076
+
+ csslint/csslint.c | 40 ++++++++++++++++++++++++++++++++--------
+ 1 file changed, 32 insertions(+), 8 deletions(-)
+
+commit d03fa2148fe0af4ebd96f1fa74772054197aaa02
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Sat Oct 31 22:45:09 2015 +0000
+
+    Fix unused status variable in set_prop_position_from_value()
+    
+    * Return status
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=710076
+
+ src/cr-style.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6bb010a2d6ca81f2c86b2e6990c44a844819b8f8
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Sat Oct 31 22:44:07 2015 +0000
+
+    Fix unused status variable in cr_utils_utf8_to_ucs1()
+    
+    * Don't set status to CR_OK, it's initialized to that value
+    * Return status
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=710076
+
+ src/cr-utils.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+commit ac8029a5fe0bf9df81ea6965ac056aa81fa4885d
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Sat Oct 31 22:42:18 2015 +0000
+
+    Fix unused status variable in cr_utils_ucs1_to_utf8()
+    
+    * Return status instead (initialized to CR_OK) instead of an explicit CR_OK
+    * Remove redundant check for *a_in_len < 1 (equivalent to *a_in_len == 0)
+      and remove now-unused end label
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=710076
+
+ src/cr-utils.c | 10 ++--------
+ 1 file changed, 2 insertions(+), 8 deletions(-)
+
+commit bc9b2c339e1181f8c69a2f74a93876932e352d6d
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Tue Aug 5 08:30:59 2014 +0000
+
+    Fix cr_tknzr_consume_chars() to set *a_nb_char before returning
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=710076
+
+ src/cr-tknzr.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+commit 5fd302372e568810ff6eda6a6babbe04543a2116
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Tue Aug 5 08:28:07 2014 +0000
+
+    Fix cr_input_consume_white_spaces to behave as documented
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=710076
+
+ src/cr-input.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 0ab22e823daa1b5a3fbaa0552874cfe33bbf15f5
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Tue Aug 5 08:22:06 2014 +0000
+
+    Fix improper use of g_ascii_strup()
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=710076
+
+ src/cr-enc-handler.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit 3f94a4f5902e5e342ed77de6739934d49e97f937
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Tue Aug 5 08:20:57 2014 +0000
+
+    Derive pointer to have appropriate type
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=710076
+
+ src/cr-enc-handler.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit e1facb1e7e8a0568774a1630c1a8621679635ef5
+Author: Markus Engel <p637777@aol.com>
+Date:   Mon Mar 24 20:29:00 2014 +0000
+
+    Fix typos
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=726993
+
+ src/cr-style.c | 2 +-
+ src/cr-tknzr.c | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 15a8885758a5e6b4d7d03d7cacd89a212bbf9847
+Author: Boris Egorov <egorov@linux.com>
+Date:   Thu Mar 19 23:42:34 2015 +0600
+
+    Fix typo in logical condition
+    
+    TYPE_SELECTOR equals to 2, so condition
+    (cur_sel->type_mask | TYPE_SELECTOR) will always be true. We should
+    increase c only if we encounter a selector.
+    
+    Issue detected by Cppcheck and MSVS (see
+    https://bugzilla.gnome.org/show_bug.cgi?id=507484)
+    
+    Signed-off-by: Boris Egorov <egorov@linux.com>
+
+ src/cr-simple-sel.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b6fe636277bff9f21b6e3f2c640a17114f9e723f
+Author: Ignacio Casal Quinteiro <icq@gnome.org>
+Date:   Sat Oct 31 12:01:52 2015 +0100
+
+    Post release version bump
+
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 464576a12964ab23278caf91c404b560a074bc40
+Author: Ignacio Casal Quinteiro <icq@gnome.org>
+Date:   Sat Oct 31 11:57:00 2015 +0100
+
+    Release 0.6.9
+
+ NEWS | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 10cb6cfadb79cc7fc08f5ea8a7412bc34c34c250
+Author: Ignacio Casal Quinteiro <icq@gnome.org>
+Date:   Sat Oct 31 11:43:20 2015 +0100
+
+    Add -I m4 to ACLOCAL_AMFLAGS
+
+ Makefile.am | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 64e310323ae6bebc7da62c05590d34f198b8bf43
+Author: Ignacio Casal Quinteiro <icq@gnome.org>
+Date:   Sat Oct 31 11:40:36 2015 +0100
+
+    Renew autogen to not use gnome-autogen
+
+ autogen.sh | 46 +++++++++++++++++++++++++++-------------------
+ 1 file changed, 27 insertions(+), 19 deletions(-)
+
+commit 274678c35f0859f0a0f93356478f87dc42dd2be5
+Author: Ignacio Casal Quinteiro <icq@gnome.org>
+Date:   Sat Oct 31 11:40:28 2015 +0100
+
+    configure: specify config macro dir
+
+ configure.ac | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit e7def20ab9a5592f6845534262b3124e06661679
+Author: Ignacio Casal Quinteiro <icq@gnome.org>
+Date:   Sat Oct 31 09:55:54 2015 +0100
+
+    configure: bump the prereq
+
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 41a7708862c21ee46a38236c8c1e571179746349
+Author: Ignacio Casal Quinteiro <icq@gnome.org>
+Date:   Sat Oct 31 09:54:10 2015 +0100
+
+    configure: generate xz on distcheck
+
+ configure.ac | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 5caf7b6c3fe442477c7eb413dd7018290b002aac
+Author: Ignacio Casal Quinteiro <icq@gnome.org>
+Date:   Sat Oct 31 09:43:04 2015 +0100
+
+    Some style fixes in Makefile.am
+
+ src/Makefile.am | 166 ++++++++++++++++++++++++++++----------------------------
+ 1 file changed, 83 insertions(+), 83 deletions(-)
+
+commit b1b59df9e127c74e54cae22958292ad1f5450376
+Author: Ignacio Casal Quinteiro <icq@gnome.org>
+Date:   Sat Oct 31 09:41:10 2015 +0100
+
+    Replace deprecated INCLUDES with CPPFLAGS
+
+ csslint/Makefile.am |  9 +++++----
+ tests/Makefile.am   | 44 ++++++++++++++++++++++----------------------
+ 2 files changed, 27 insertions(+), 26 deletions(-)
+
+commit 60fcbef051e30acb8ab766299c27eb2fe7063d33
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Sat Oct 31 00:53:31 2015 +0800
+
+    build: Ensure croco[.vs10].headers is removed
+    
+    croco[.vs10].headers are intermediate files that is generated during 'make
+    dist' that outght to be removed upon the completion of 'make dist', so
+    ensure that it is so.
+
+ build/win32/vs10/Makefile.am | 6 +++---
+ build/win32/vs9/Makefile.am  | 6 +++---
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+commit 2424407fe4e81feb6738533038d186949801c92c
+Author: Ignacio Casal Quinteiro <icq@gnome.org>
+Date:   Fri Oct 30 09:17:40 2015 +0100
+
+    Update NEWS for upcoming release
+
+ NEWS | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit d8f9915a62aa14d49170180367c07c449833ae02
+Author: Markus Engel <p637777@aol.com>
+Date:   Fri Oct 30 09:06:46 2015 +0100
+
+    Plug memory leaks
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=726992
+
+ src/cr-cascade.c | 1 +
+ src/cr-term.c    | 5 ++---
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 96d36b17f148195723c10d59fca3b97327468b22
+Author: Ignacio Casal Quinteiro <icq@gnome.org>
+Date:   Fri Oct 30 08:55:06 2015 +0100
+
+    Fix variables set but not used
+
+ src/cr-statement.c |  4 +---
+ src/cr-utils.c     | 12 +++---------
+ 2 files changed, 4 insertions(+), 12 deletions(-)
+
+commit cdf9eb341eb97dbf8900cf61323356f463b3c714
+Author: Christian Persch <chpe@gnome.org>
+Date:   Fri Sep 11 12:50:56 2015 +0200
+
+    doap: Remove myself
+    
+    I'm not interested in this module anymore since I gave away librsvg.
+
+ libcroco.doap | 7 -------
+ 1 file changed, 7 deletions(-)
+
+commit 9e19d83a1a463299cb74a26c07bad74cf9c303a2
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Fri Sep 25 16:55:05 2015 +0800
+
+    MSVC Builds: "Add" Visual Studio 2015 Projects
+    
+    This "adds" Visual Studio 2015 projects by doing what we did before:
+    Copy the Visual Studio 2010 projects and updating items in there as
+    needed, as the 2010 projects are largely the same to the 2015 ones.
+
+ build/Makefile-newvs.am      | 24 ++++++++++++++++--------
+ build/win32/Makefile.am      |  2 +-
+ build/win32/vs11/Makefile.am |  4 +---
+ build/win32/vs12/Makefile.am |  4 +---
+ build/win32/vs14/Makefile.am | 37 +++++++++++++++++++++++++++++++++++++
+ configure.ac                 |  1 +
+ 6 files changed, 57 insertions(+), 15 deletions(-)
+
+commit cbab917ad1389615a5448d9b30517ff26af7144d
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Fri Sep 25 16:52:18 2015 +0800
+
+    Build: Make Makefile.msvcproj A Bit More Generic
+    
+    Handle also the situation where $(srcdir) == $(top_srcdir), so that this
+    can also be used in cases like librsvg and gobject-introspection.
+
+ build/Makefile.msvcproj | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+commit 9207f349d1c97618ab38e6b095207bbd8184d844
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Wed Jul 29 15:11:38 2015 +0800
+
+    MSVC Builds: Rename "Install" Project
+    
+    ...and update its GUID so that the existing libcroco projects will fit in
+    easier into all-in-one solution files that is used to build the entire
+    GTK+ stack, where project GUIDs need to me mutually exclusive in solution
+    files.
+
+ build/win32/vs10/Makefile.am           |   2 +-
+ build/win32/vs10/croco-install.vcxproj | 132 +++++++++++++++++++++++++++++++++
+ build/win32/vs10/install.vcxproj       | 132 ---------------------------------
+ build/win32/vs10/libcroco.sln          |  18 ++---
+ build/win32/vs11/Makefile.am           |   4 +-
+ build/win32/vs12/Makefile.am           |   4 +-
+ build/win32/vs9/Makefile.am            |   2 +-
+ build/win32/vs9/croco-install.vcproj   |  99 +++++++++++++++++++++++++
+ build/win32/vs9/install.vcproj         |  99 -------------------------
+ build/win32/vs9/libcroco.sln           |  18 ++---
+ 10 files changed, 255 insertions(+), 255 deletions(-)
+
+commit a2b9a3aaeeaee5765366e55802e04c6ff5cce93c
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Wed Jul 29 14:47:42 2015 +0800
+
+    MVSC 2008 Builds: Fine Tune .lib "Installation"
+    
+    Make sure that we don't copy the other .lib files accidently, when this
+    file is a part of an all-in-one solution file.
+
+ build/win32/vs9/croco-install.vspropsin | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2089d2f149f05f5fed84270e62be8ca69dbc2e6a
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Mon Jul 27 15:24:43 2015 +0800
+
+    Build: Clean Up MSVC Project Generation
+    
+    Add and use a common autotools module, which can be used to generate
+    the various Visual Studio 2008/2010 project files, which also have
+    the following benefits:
+    
+    -Have the header installation porperty sheet also generated from the
+     templates using 'make dist', to ensure the headers listings are kept
+     up-to-date between releases.
+    -Make src/Makefile.am cleaner
+    -Support out-of-tree builds and 'make -jN dist' better
+    
+    Also improve the debugging experience for the stack by copying the .pdb
+    files, which are already generated for all builds.
+
+ build/Makefile.msvcproj                  | 103 ++++++++++++++++++++++++++++
+ build/win32/vs10/Makefile.am             |  20 ++++--
+ build/win32/vs10/croco-install.props     | 111 -------------------------------
+ build/win32/vs10/croco-install.propsin   |  52 +++++++++++++++
+ build/win32/vs10/croco.vcxproj.filtersin |   4 +-
+ build/win32/vs10/croco.vcxprojin         |   4 +-
+ build/win32/vs9/Makefile.am              |  28 +++++---
+ build/win32/vs9/croco-install.vsprops    |  69 -------------------
+ build/win32/vs9/croco-install.vspropsin  |  44 ++++++++++++
+ build/win32/vs9/croco.vcprojin           |   2 +-
+ src/Makefile.am                          |  41 ++++--------
+ 11 files changed, 251 insertions(+), 227 deletions(-)
+
+commit 68e19d7c494c25622d37acfd20f71ae7622b2a62
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Mon Jul 27 16:09:37 2015 +0800
+
+    Update Visual Studio Property Sheets
+    
+    Speed up release builds by enable multiple processor compilation and
+    improve include path search for libxml2.  Also, log more useful info in
+    MSVC 2010+ release builds, using /d2Zi+.
+
+ build/win32/vs10/croco-build-defines.props  | 4 +++-
+ build/win32/vs9/croco-build-defines.vsprops | 3 ++-
+ 2 files changed, 5 insertions(+), 2 deletions(-)
+
+commit b012b9777da68a6b8e5b98ad9297c81cbcd2fc9b
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Mon Jul 27 16:04:20 2015 +0800
+
+    MSVC 2010+ Builds: Update .pdb Generation
+    
+    Make our .pdb filename for the libcroco DLL match, so that we can copy them
+    during "installation" later.
+
+ build/win32/vs10/croco.vcxprojin | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 566424149af665442db482b373940b1404df63e3
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Mon Jul 27 15:55:28 2015 +0800
+
+    MSVC Builds: Add CopyDir to Property Sheets
+    
+    This prepares the "install" property sheets ready for the next patches to
+    clean up the Visual Studio 2008/2010 Project generation.
+
+ build/win32/vs10/croco-version-paths.props.in  | 4 ++++
+ build/win32/vs9/croco-version-paths.vsprops.in | 4 ++++
+ 2 files changed, 8 insertions(+)
+
+commit 7f2c2e2cf2f8b56f192a0bdff6f10f32ea5389e7
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Mon Jul 27 15:16:50 2015 +0800
+
+    Fix MSVC 2012/2013 Project File Generation
+    
+    The paths for the project files were incorrectly set from the MSVC
+    2008 projects, which is obviously not right.  Fix that.
+    
+    Oops.
+
+ build/win32/vs11/Makefile.am | 18 ++++++++++--------
+ build/win32/vs12/Makefile.am | 18 ++++++++++--------
+ 2 files changed, 20 insertions(+), 16 deletions(-)
+
+commit 2cafcab95668fc64b3d8eeedf32b4bbc0ced9522
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Tue Jul 14 13:41:22 2015 +0800
+
+    build/Makefile-newvs.am: Use Pattern Rules
+    
+    This allows this common autotools file to be cleaned up quite a bit, and
+    has the benefit of having 'make -jN distcheck' complete successfully.
+
+ build/Makefile-newvs.am | 48 ++++++++++++++++++++++++------------------------
+ 1 file changed, 24 insertions(+), 24 deletions(-)
+
+commit 21b3a35292e16448ab5b36b2ab25777eb8e30e50
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Fri Aug 8 16:34:39 2014 +0800
+
+    MSVC Builds: Add Simple Support for MSVC 2012/2013
+    
+    As the Visual Studio 2012/2013 project file format is largely the same as
+    the Visual Studio 2010 ones, we can add support for them with relative ease
+    by copying the 2010 files and updating them as necessary with autotools
+    scripts, so to keep them up-to-date, all that is needed is that the Visual
+    Studio 2010 projects are kept up to date.
+    
+    This might change if we do support the stack under the Windows RT APIs, but
+    this will do the job for now.
+
+ build/Makefile-newvs.am      | 37 +++++++++++++++++++++++++++++++++++++
+ build/win32/Makefile.am      |  2 +-
+ build/win32/vs11/Makefile.am | 37 +++++++++++++++++++++++++++++++++++++
+ build/win32/vs12/Makefile.am | 37 +++++++++++++++++++++++++++++++++++++
+ configure.ac                 |  2 ++
+ 5 files changed, 114 insertions(+), 1 deletion(-)
+
+commit 670e3ee116f48118985f38c5ae97df5a42808822
+Author: Jasper St. Pierre <jstpierre@mecheye.net>
+Date:   Tue Sep 3 15:11:12 2013 -0400
+
+    cr-fonts: Fix a bad copy/paste error
+
+ src/cr-fonts.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit dd9dcf3803ff2f5a4f7eae58b1591297da5625d8
+Author: Jasper St. Pierre <jstpierre@mecheye.net>
+Date:   Tue Sep 3 15:11:06 2013 -0400
+
+    cr-additional-sel: Fix some bad copy/paste errors
+
+ src/cr-additional-sel.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit cb764721168bc9ba86b64447108eb384c7747c0d
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Fri Aug 8 15:43:56 2014 +0800
+
+    MSVC Builds: Split up the Property Sheets
+    
+    Update the Visual Studio Projects so that the property sheets are split by
+    the functions required, so to simplify their maintenance.  The projects can
+    then import the property sheets that suit their needs.  This is done like
+    the rest of the GTK+ stack, so it also makes it easier to support newer
+    versions of Visual Studio.
+    
+    As the original main property sheet is generated during configure time (and
+    disted), update configure.ac as well, as the name of the template file
+    changed in the process.
+
+ build/win32/vs10/Makefile.am                   |   7 +-
+ build/win32/vs10/croco-build-defines.props     |  41 ++++++
+ build/win32/vs10/croco-gen-srcs.props          |  44 +++++++
+ build/win32/vs10/croco-install.props           | 111 ++++++++++++++++
+ build/win32/vs10/croco-version-paths.props.in  |  69 ++++++++++
+ build/win32/vs10/croco.vcxprojin               |   8 +-
+ build/win32/vs10/csslint.vcxproj               |   8 +-
+ build/win32/vs10/install.vcxproj               |  64 +++------
+ build/win32/vs10/libcroco.props.in             | 171 -------------------------
+ build/win32/vs9/Makefile.am                    |   8 +-
+ build/win32/vs9/croco-build-defines.vsprops    |  40 ++++++
+ build/win32/vs9/croco-gen-srcs.vsprops         |  38 ++++++
+ build/win32/vs9/croco-install.vsprops          |  69 ++++++++++
+ build/win32/vs9/croco-version-paths.vsprops.in |  68 ++++++++++
+ build/win32/vs9/croco.vcprojin                 |   8 +-
+ build/win32/vs9/csslint.vcproj                 |   8 +-
+ build/win32/vs9/install.vcproj                 |   8 +-
+ build/win32/vs9/libcroco.vsprops.in            | 134 -------------------
+ configure.ac                                   |   4 +-
+ 19 files changed, 532 insertions(+), 376 deletions(-)
+
+commit 5fb3db99bd3a5a1ff2ddb6959aa556bdab567bcd
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Fri Aug 8 15:00:26 2014 +0800
+
+    MSVC Builds: Use Custom Build Steps
+    
+    Use Custom Build Steps for copying config.h from config.h.win32 and for
+    generating libcroco.def from libcroco.symbols, as it would make it easier
+    to clean and regenerate if one is cleaning or rebuilding or updateing
+    those files.
+    
+    This also puts back into the .sln files the lines that were actually
+    needed, which were removed from them accidentally from the last commit.
+
+ build/win32/vs10/croco.vcxproj.filtersin |  4 ++
+ build/win32/vs10/croco.vcxprojin         | 42 +++++++++++++-----
+ build/win32/vs10/libcroco.props.in       | 21 +++------
+ build/win32/vs10/libcroco.sln            | 10 +++++
+ build/win32/vs9/croco.vcprojin           | 76 +++++++++++++++++++++++++-------
+ build/win32/vs9/libcroco.sln             |  8 ++++
+ build/win32/vs9/libcroco.vsprops.in      | 14 ++----
+ 7 files changed, 121 insertions(+), 54 deletions(-)
+
+commit 81177785b0b6e36b57d4ff250d8c24956835dc67
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Fri Aug 8 14:22:46 2014 +0800
+
+    MSVC Builds: Don't Build The Test Programs
+
+ build/win32/vs10/Makefile.am           |  16 +--
+ build/win32/vs10/libcroco.sln          |  80 -------------
+ build/win32/vs10/test0.vcxproj         | 197 ---------------------------------
+ build/win32/vs10/test0.vcxproj.filters |  36 ------
+ build/win32/vs10/test1.vcxproj         | 197 ---------------------------------
+ build/win32/vs10/test1.vcxproj.filters |  36 ------
+ build/win32/vs10/test2.vcxproj         | 197 ---------------------------------
+ build/win32/vs10/test2.vcxproj.filters |  36 ------
+ build/win32/vs10/test3.vcxproj         | 197 ---------------------------------
+ build/win32/vs10/test3.vcxproj.filters |  36 ------
+ build/win32/vs10/test4.vcxproj         | 197 ---------------------------------
+ build/win32/vs10/test4.vcxproj.filters |  36 ------
+ build/win32/vs10/test5.vcxproj         | 197 ---------------------------------
+ build/win32/vs10/test5.vcxproj.filters |  36 ------
+ build/win32/vs10/test6.vcxproj         | 197 ---------------------------------
+ build/win32/vs10/test6.vcxproj.filters |  36 ------
+ build/win32/vs9/Makefile.am            |   9 +-
+ build/win32/vs9/libcroco.sln           | 106 ------------------
+ build/win32/vs9/test0.vcproj           | 190 -------------------------------
+ build/win32/vs9/test1.vcproj           | 190 -------------------------------
+ build/win32/vs9/test2.vcproj           | 190 -------------------------------
+ build/win32/vs9/test3.vcproj           | 190 -------------------------------
+ build/win32/vs9/test4.vcproj           | 190 -------------------------------
+ build/win32/vs9/test5.vcproj           | 190 -------------------------------
+ build/win32/vs9/test6.vcproj           | 190 -------------------------------
+ 25 files changed, 2 insertions(+), 3170 deletions(-)
+
+commit 563fe9a38e19cd63d3181d9c3773875a0cdb4c2c
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Tue Aug 5 12:14:13 2014 +0000
+
+    Canonicalize the spacing around if statements and g_return_* invocations
+
+ src/cr-om-parser.c | 17 +++++++++++++++++
+ tests/test2-main.c |  1 +
+ tests/test3-main.c |  1 +
+ 3 files changed, 19 insertions(+)
+
+commit 06e15e28d24f1f4cfbf9de2d3224a076ae3b3b4c
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Tue Aug 5 08:20:27 2014 +0000
+
+    Fix the unused arguments warnings
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=710076
+
+ src/cr-om-parser.c | 9 +++++++++
+ tests/test2-main.c | 2 ++
+ tests/test3-main.c | 2 ++
+ 3 files changed, 13 insertions(+)
+
+commit b77da88890a6f1044fe3213fedba4da782233ba5
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Tue Aug 5 08:19:02 2014 +0000
+
+    char/xmlChar casting
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=710076
+
+ csslint/csslint.c    |  2 +-
+ src/cr-declaration.c |  2 +-
+ src/cr-rgb.c         |  4 ++--
+ src/cr-sel-eng.c     | 40 ++++++++++++++++++++--------------------
+ src/cr-statement.c   | 14 +++++++-------
+ src/cr-style.c       |  2 +-
+ src/cr-term.c        |  2 +-
+ tests/test5-main.c   |  2 +-
+ tests/test6-main.c   |  2 +-
+ 9 files changed, 35 insertions(+), 35 deletions(-)
+
+commit d27114ca3442cffda04950b054d74f0f6cb19130
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Tue Aug 5 08:17:17 2014 +0000
+
+    gchar/guchar types and casting
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=710076
+
+ csslint/csslint.c       | 18 +++++++++---------
+ src/cr-additional-sel.c | 12 ++++++------
+ src/cr-attr-sel.c       |  8 ++++----
+ src/cr-declaration.c    | 20 ++++++++++----------
+ src/cr-enc-handler.c    |  2 +-
+ src/cr-fonts.c          | 10 +++++-----
+ src/cr-num.c            |  8 ++++----
+ src/cr-parser.c         | 18 +++++++++---------
+ src/cr-pseudo.c         | 12 ++++++------
+ src/cr-rgb.c            |  9 ++++-----
+ src/cr-sel-eng.c        |  6 +++---
+ src/cr-selector.c       |  6 +++---
+ src/cr-simple-sel.c     | 12 ++++++------
+ src/cr-statement.c      | 16 ++++++++--------
+ src/cr-style.c          | 16 ++++++++--------
+ src/cr-term.c           | 38 +++++++++++++++++++-------------------
+ src/cr-tknzr.c          |  2 +-
+ tests/test0-main.c      |  4 ++--
+ tests/test1-main.c      |  4 ++--
+ tests/test2-main.c      | 24 ++++++++++++------------
+ tests/test3-main.c      | 24 ++++++++++++------------
+ tests/test4-main.c      | 24 ++++++++++++------------
+ tests/test5-main.c      |  4 ++--
+ tests/test6-main.c      |  2 +-
+ 24 files changed, 149 insertions(+), 150 deletions(-)
+
+commit a7df9d26a96bb48ccff06f4543c134e545b90c40
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Tue Aug 5 08:23:42 2014 +0000
+
+    Use the right values for checking CRPredefinedAbsoluteFontSize
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=710076
+
+ src/cr-fonts.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 0284435d2c9d3e6e818bf160108271f4fd390dc9
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Tue Aug 5 08:27:03 2014 +0000
+
+    Use unsigned types where appropriate
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=710076
+
+ src/cr-input.c | 2 +-
+ src/cr-style.c | 6 +++---
+ src/cr-tknzr.c | 4 ++--
+ 3 files changed, 6 insertions(+), 6 deletions(-)
+
+commit 6824af55301f5b0844649f2104f58841f73f3e10
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Tue Aug 5 08:28:52 2014 +0000
+
+    Ensure PEEK_NEXT_CHAR does not clash with existing variables
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=710076
+
+ src/cr-parser.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 2e56f962c28929223b779b144b89a704086729fc
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Tue Aug 5 08:31:31 2014 +0000
+
+    Remove shadowing from cr_tknzr_get_next_token()
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=710076
+
+ src/cr-tknzr.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 4a65fa0ace0a7eef9338a2bb1c4b57b74721830f
+Author: Руслан Ижбулатов <lrn1986@gmail.com>
+Date:   Tue Aug 5 08:29:30 2014 +0000
+
+    Remove shadowing in cr_statement_media_rule_to_string()
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=710076
+
+ src/cr-statement.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit d46be1392ef1a2b147bc10908d3b94014b57bcd5
+Author: Andre Klapper <a9016009@gmx.de>
+Date:   Thu Jul 31 21:38:46 2014 +0200
+
+    doap: add <programming-language>
+
+ libcroco.doap | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit eab0691c3e17fb3724c0fc23c347425817ddb96a
+Author: Olav Vitters <olav@vitters.nl>
+Date:   Wed Jul 30 20:27:09 2014 +0200
+
+    doap category core
+
+ libcroco.doap | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit aeb361812b771edc80f1be5756380c075e2008e4
+Author: Ryan Lortie <desrt@desrt.ca>
+Date:   Tue Feb 25 17:24:59 2014 -0500
+
+    Remove INSTALL from version control
+    
+    This is getting updated by autoregen causing jhbuild to mistakenly
+    believe that the build is dirty.
+
+ INSTALL | 229 ----------------------------------------------------------------
+ 1 file changed, 229 deletions(-)
+
+commit e6ad46319343d192d063ee34cd99806e7033ade9
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Mon Dec 23 11:55:42 2013 +0800
+
+    Visual Studio Build Files Cleanup and Fixes
+    
+    Fix up the property sheets, as it was "installing" the libcroco stuff one
+    level down from the desired folder, and $(top_srcdir) was missed from the
+    include directories list for the VS2010 property sheets.  Also unify items
+    so that we can reduce duplicate items in there.
+    
+    Build all projects with the MultiByte character set setting to be
+    consistent with the rest of the GLib stack.
+
+ build/win32/vs10/croco.vcxprojin    |  20 ++++---
+ build/win32/vs10/csslint.vcxproj    |  12 +++--
+ build/win32/vs10/install.vcxproj    |   4 ++
+ build/win32/vs10/libcroco.props.in  | 102 +++++++++++++++++++-----------------
+ build/win32/vs10/libcroco.sln       |   2 +-
+ build/win32/vs10/test0.vcxproj      |  12 +++--
+ build/win32/vs10/test1.vcxproj      |  12 +++--
+ build/win32/vs10/test2.vcxproj      |  12 +++--
+ build/win32/vs10/test3.vcxproj      |  12 +++--
+ build/win32/vs10/test4.vcxproj      |  12 +++--
+ build/win32/vs10/test5.vcxproj      |  12 +++--
+ build/win32/vs10/test6.vcxproj      |  12 +++--
+ build/win32/vs9/croco.vcprojin      |  16 +++---
+ build/win32/vs9/csslint.vcproj      |   8 +--
+ build/win32/vs9/libcroco.vsprops.in |  90 ++++++++++++++++---------------
+ build/win32/vs9/test0.vcproj        |   8 +--
+ build/win32/vs9/test1.vcproj        |   8 +--
+ build/win32/vs9/test2.vcproj        |   8 +--
+ build/win32/vs9/test3.vcproj        |   8 +--
+ build/win32/vs9/test4.vcproj        |   8 +--
+ build/win32/vs9/test5.vcproj        |   8 +--
+ build/win32/vs9/test6.vcproj        |   8 +--
+ 22 files changed, 225 insertions(+), 169 deletions(-)
+
+commit 611f624a6e15065792b41eb5ce14811293f3fb0a
+Author: Nuno Araujo <nuno.araujo@russo79.com>
+Date:   Sat Jan 19 23:20:37 2013 +0100
+
+    build: rename configure.in into configure.ac
+    
+    With the upcoming version of automake (1.14) the support
+    for the configure.in file will be dropped.[1]
+    
+    [1]http://lists.gnu.org/archive/html/automake/2012-12/msg00038.html
+    
+    Bug #692111.
+
+ autogen.sh   |   2 +-
+ configure.ac | 178 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ configure.in | 178 -----------------------------------------------------------
+ 3 files changed, 179 insertions(+), 179 deletions(-)
+
+commit c143b97c8aef44205ae4601c3284436379eba078
+Author: Nuno Araujo <nuno.araujo@russo79.com>
+Date:   Wed Jan 16 00:01:13 2013 +0100
+
+    build: add support for automake 1.13
+    
+    In Automake 1.13, the long-deprecated macro AM_CONFIG_HEADER (deprecated
+    since 2002) has been removed in favour of AC_CONFIG_HEADERS.
+    
+    Bug #692111.
+
+ configure.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d28dfffe236bde73cb2b7e2914fb5130a80a1de4
+Author: Christian Persch <chpe@gnome.org>
+Date:   Thu Oct 25 22:52:43 2012 +0200
+
+    Post release version bump
+
+ configure.in | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
 commit 330a394c0c65b6da85edd7fe73608c12e7d27dfc
 Author: Christian Persch <chpe@gnome.org>
 Date:   Thu Oct 25 22:52:16 2012 +0200
@@ -1340,12 +2217,12 @@ Date:   Fri Jan 27 12:43:53 2006 +0000
 
     Hush now baby, baby don't you cry...
 
- .cvsignore                         | 13 +++++++++++++
- csslint/.cvsignore                 |  2 +-
- {src => docs/reference}/.cvsignore |  3 ++-
- src/.cvsignore                     |  1 +
- tests/.cvsignore                   |  7 +++++++
- 5 files changed, 24 insertions(+), 2 deletions(-)
+ .cvsignore                | 13 +++++++++++++
+ csslint/.cvsignore        |  2 +-
+ docs/reference/.cvsignore |  3 +++
+ src/.cvsignore            |  1 +
+ tests/.cvsignore          |  7 +++++++
+ 5 files changed, 25 insertions(+), 1 deletion(-)
 
 commit d351d225618511973d3977069631286753bc478f
 Author: Tor Lillqvist <tml@novell.com>
@@ -1525,17 +2402,18 @@ Date:   Tue Jun 8 22:57:27 2004 +0000
     
     	    synchronize with libcroco--mainline--0.6--patch-28.
 
- ChangeLog                                   | 15 +++++++++++++
- Makefile.am                                 | 34 ++++++++++++++++++++++++-----
- configure.in                                |  7 +++---
- csslint/Makefile.am                         | 10 ++++-----
- docs/examples/cssom-example-1.c             |  2 +-
- docs/examples/sac-example-1.c               |  2 +-
- docs/examples/sac-example-2.c               |  8 +++----
- docs/examples/selection-example-1.c         |  2 +-
- src/Makefile.am                             |  9 ++++----
- tests/{global-vars.sh => global-vars.sh.in} |  2 +-
- 10 files changed, 65 insertions(+), 26 deletions(-)
+ ChangeLog                           | 15 +++++++++++++++
+ Makefile.am                         | 34 ++++++++++++++++++++++++++++------
+ configure.in                        |  7 ++++---
+ csslint/Makefile.am                 | 10 +++++-----
+ docs/examples/cssom-example-1.c     |  2 +-
+ docs/examples/sac-example-1.c       |  2 +-
+ docs/examples/sac-example-2.c       |  8 ++++----
+ docs/examples/selection-example-1.c |  2 +-
+ src/Makefile.am                     |  9 +++++----
+ tests/global-vars.sh                | 10 ----------
+ tests/global-vars.sh.in             | 10 ++++++++++
+ 11 files changed, 74 insertions(+), 35 deletions(-)
 
 commit f543f25b62892e6eef5e0a733941a1e3480e02e2
 Author: Dodji Seketeli <dodji@gnome.org>
@@ -2809,9 +3687,10 @@ Date:   Sat Jan 24 19:34:37 2004 +0000
     * tests/test-output-refs/test7.out: removed this test
     as it does not belong to libcroco anymore.
 
- ChangeLog  | 3 +++
- autogen.sh | 2 +-
- 2 files changed, 4 insertions(+), 1 deletion(-)
+ ChangeLog                        | 3 +++
+ autogen.sh                       | 2 +-
+ tests/test-output-refs/test7.out | 0
+ 3 files changed, 4 insertions(+), 1 deletion(-)
 
 commit d058779c836ec6ac56721581dd44d1dd91d3206c
 Author: Dodji Seketeli <dodji@gnome.org>
@@ -2828,71 +3707,118 @@ Date:   Sat Jan 24 19:24:08 2004 +0000
     Libcroco now needs libxml2 and glib only.
     Sewfox need libgnomecanvas2.
 
- ChangeLog                             |   11 +-
- configure.in                          |  188 +---
- csslint/Makefile.am                   |   21 +-
- libcroco.pc.in                        |    7 +-
- src/Makefile.am                       |   87 +-
- src/{parser => }/cr-additional-sel.c  |    0
- src/{parser => }/cr-additional-sel.h  |    0
- src/{parser => }/cr-attr-sel.c        |    0
- src/{parser => }/cr-attr-sel.h        |    0
- src/{parser => }/cr-cascade.c         |    0
- src/{parser => }/cr-cascade.h         |    0
- src/{parser => }/cr-declaration.c     |    0
- src/{parser => }/cr-declaration.h     |    0
- src/{parser => }/cr-doc-handler.c     |    0
- src/{parser => }/cr-doc-handler.h     |    0
- src/{parser => }/cr-enc-handler.c     |    0
- src/{parser => }/cr-enc-handler.h     |    0
- src/{seleng => }/cr-fonts.c           |    0
- src/{seleng => }/cr-fonts.h           |    0
- src/{parser => }/cr-input.c           |    0
- src/{parser => }/cr-input.h           |    0
- src/{parser => }/cr-num.c             |    0
- src/{parser => }/cr-num.h             |    0
- src/{parser => }/cr-om-parser.c       |    0
- src/{parser => }/cr-om-parser.h       |    0
- src/{parser => }/cr-parser.c          |    0
- src/{parser => }/cr-parser.h          |    0
- src/{parser => }/cr-pseudo.c          |    0
- src/{parser => }/cr-pseudo.h          |    0
- src/{parser => }/cr-rgb.c             |    0
- src/{parser => }/cr-rgb.h             |    0
- src/{seleng => }/cr-sel-eng.c         |    0
- src/{seleng => }/cr-sel-eng.h         |    4 -
- src/{parser => }/cr-selector.c        |    0
- src/{parser => }/cr-selector.h        |    0
- src/{parser => }/cr-simple-sel.c      |    0
- src/{parser => }/cr-simple-sel.h      |    0
- src/{parser => }/cr-statement.c       |    0
- src/{parser => }/cr-statement.h       |    0
- src/{seleng => }/cr-style.c           |    0
- src/{seleng => }/cr-style.h           |    0
- src/{parser => }/cr-stylesheet.c      |    0
- src/{parser => }/cr-stylesheet.h      |    0
- src/{parser => }/cr-term.c            |    0
- src/{parser => }/cr-term.h            |    0
- src/{parser => }/cr-tknzr.c           |    0
- src/{parser => }/cr-tknzr.h           |    0
- src/{parser => }/cr-token.c           |    0
- src/{parser => }/cr-token.h           |    0
- src/{parser => }/cr-utils.c           |    0
- src/{parser => }/cr-utils.h           |    0
- src/layeng/Makefile.am                |   22 -
- src/layeng/cr-box-view.c              |  778 --------------
- src/layeng/cr-box-view.h              |   83 --
- src/layeng/cr-box.c                   |  739 -------------
- src/layeng/cr-box.h                   |  293 ------
- src/layeng/cr-lay-eng.c               | 1844 ---------------------------------
- src/layeng/cr-lay-eng.h               |   78 --
- src/libcroco-config.h                 |   18 +
- src/{parser => }/libcroco-config.h.in |   16 -
- src/libcroco.h                        |   41 +-
- src/parser/Makefile.am                |   74 --
- src/seleng/Makefile.am                |   18 -
- tests/Makefile.am                     |   35 +-
- 64 files changed, 149 insertions(+), 4208 deletions(-)
+ ChangeLog                       |   11 +-
+ configure.in                    |  188 +-
+ csslint/Makefile.am             |   21 +-
+ libcroco.pc.in                  |    7 +-
+ src/Makefile.am                 |   87 +-
+ src/cr-additional-sel.c         |  401 +++
+ src/cr-additional-sel.h         |  110 +
+ src/cr-attr-sel.c               |  239 ++
+ src/cr-attr-sel.h               |   79 +
+ src/cr-cascade.c                |  190 ++
+ src/cr-cascade.h                |   72 +
+ src/cr-declaration.c            |  593 +++++
+ src/cr-declaration.h            |  112 +
+ src/cr-doc-handler.c            |  244 ++
+ src/cr-doc-handler.h            |  287 +++
+ src/cr-enc-handler.c            |  194 ++
+ src/cr-enc-handler.h            |   96 +
+ src/cr-fonts.c                  |  382 +++
+ src/cr-fonts.h                  |  276 +++
+ src/cr-input.c                  | 1188 +++++++++
+ src/cr-input.h                  |  172 ++
+ src/cr-num.c                    |  305 +++
+ src/cr-num.h                    |  129 +
+ src/cr-om-parser.c              | 1089 ++++++++
+ src/cr-om-parser.h              |   89 +
+ src/cr-parser.c                 | 5194 +++++++++++++++++++++++++++++++++++++++
+ src/cr-parser.h                 |  142 ++
+ src/cr-pseudo.c                 |  173 ++
+ src/cr-pseudo.h                 |   70 +
+ src/cr-rgb.c                    |  484 ++++
+ src/cr-rgb.h                    |   84 +
+ src/cr-sel-eng.c                | 1558 ++++++++++++
+ src/cr-sel-eng.h                |  107 +
+ src/cr-selector.c               |  304 +++
+ src/cr-selector.h               |  105 +
+ src/cr-simple-sel.c             |  292 +++
+ src/cr-simple-sel.h             |  136 +
+ src/cr-statement.c              | 2396 ++++++++++++++++++
+ src/cr-statement.h              |  396 +++
+ src/cr-style.c                  | 2190 +++++++++++++++++
+ src/cr-style.h                  |  284 +++
+ src/cr-stylesheet.c             |  122 +
+ src/cr-stylesheet.h             |  105 +
+ src/cr-term.c                   |  619 +++++
+ src/cr-term.h                   |  201 ++
+ src/cr-tknzr.c                  | 2851 +++++++++++++++++++++
+ src/cr-tknzr.h                  |  137 ++
+ src/cr-token.c                  |  674 +++++
+ src/cr-token.h                  |  247 ++
+ src/cr-utils.c                  | 1492 +++++++++++
+ src/cr-utils.h                  |  244 ++
+ src/layeng/Makefile.am          |   22 -
+ src/layeng/cr-box-view.c        |  778 ------
+ src/layeng/cr-box-view.h        |   83 -
+ src/layeng/cr-box.c             |  739 ------
+ src/layeng/cr-box.h             |  293 ---
+ src/layeng/cr-lay-eng.c         | 1844 --------------
+ src/layeng/cr-lay-eng.h         |   78 -
+ src/libcroco-config.h           |   18 +
+ src/libcroco-config.h.in        |   18 +
+ src/libcroco.h                  |   41 +-
+ src/parser/Makefile.am          |   74 -
+ src/parser/cr-additional-sel.c  |  401 ---
+ src/parser/cr-additional-sel.h  |  110 -
+ src/parser/cr-attr-sel.c        |  239 --
+ src/parser/cr-attr-sel.h        |   79 -
+ src/parser/cr-cascade.c         |  190 --
+ src/parser/cr-cascade.h         |   72 -
+ src/parser/cr-declaration.c     |  593 -----
+ src/parser/cr-declaration.h     |  112 -
+ src/parser/cr-doc-handler.c     |  244 --
+ src/parser/cr-doc-handler.h     |  287 ---
+ src/parser/cr-enc-handler.c     |  194 --
+ src/parser/cr-enc-handler.h     |   96 -
+ src/parser/cr-input.c           | 1188 ---------
+ src/parser/cr-input.h           |  172 --
+ src/parser/cr-num.c             |  305 ---
+ src/parser/cr-num.h             |  129 -
+ src/parser/cr-om-parser.c       | 1089 --------
+ src/parser/cr-om-parser.h       |   89 -
+ src/parser/cr-parser.c          | 5194 ---------------------------------------
+ src/parser/cr-parser.h          |  142 --
+ src/parser/cr-pseudo.c          |  173 --
+ src/parser/cr-pseudo.h          |   70 -
+ src/parser/cr-rgb.c             |  484 ----
+ src/parser/cr-rgb.h             |   84 -
+ src/parser/cr-selector.c        |  304 ---
+ src/parser/cr-selector.h        |  105 -
+ src/parser/cr-simple-sel.c      |  292 ---
+ src/parser/cr-simple-sel.h      |  136 -
+ src/parser/cr-statement.c       | 2396 ------------------
+ src/parser/cr-statement.h       |  396 ---
+ src/parser/cr-stylesheet.c      |  122 -
+ src/parser/cr-stylesheet.h      |  105 -
+ src/parser/cr-term.c            |  619 -----
+ src/parser/cr-term.h            |  201 --
+ src/parser/cr-tknzr.c           | 2851 ---------------------
+ src/parser/cr-tknzr.h           |  137 --
+ src/parser/cr-token.c           |  674 -----
+ src/parser/cr-token.h           |  247 --
+ src/parser/cr-utils.c           | 1492 -----------
+ src/parser/cr-utils.h           |  244 --
+ src/parser/libcroco-config.h.in |   34 -
+ src/seleng/Makefile.am          |   18 -
+ src/seleng/cr-fonts.c           |  382 ---
+ src/seleng/cr-fonts.h           |  276 ---
+ src/seleng/cr-sel-eng.c         | 1558 ------------
+ src/seleng/cr-sel-eng.h         |  111 -
+ src/seleng/cr-style.c           | 2190 -----------------
+ src/seleng/cr-style.h           |  284 ---
+ tests/Makefile.am               |   35 +-
+ 111 files changed, 27021 insertions(+), 31080 deletions(-)
 
 commit a97a943a32d37e1c92aa93e861a28d96f84f2163
 Author: Dodji Seketeli <dodji@gnome.org>
@@ -3134,7 +4060,10 @@ Date:   Thu Dec 11 21:14:41 2003 +0000
     removed junked file.
     Dodji.
 
- 0 files changed
+ docs/examples/report.c   | 0
+ docs/examples/report.css | 0
+ docs/examples/report.xml | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
 
 commit 61ade384b3856379e82bceba7768762d04a015ef
 Author: Dodji Seketeli <dodji@gnome.org>
@@ -3155,12 +4084,15 @@ Date:   Thu Dec 11 21:14:05 2003 +0000
 
  ChangeLog                             |   8 +-
  docs/examples/cssom-example-1.c       |   9 ++-
+ docs/examples/report.c                |   0
+ docs/examples/report.css              |   0
+ docs/examples/report.xml              |   0
  docs/examples/sac-example-1.c         |  18 ++---
  docs/examples/selection-example-1.c   | 140 ++++++++++++++++++++++++++++++++++
  docs/examples/selection-example-1.css |  31 ++++++++
  docs/examples/selection-example-1.xml |  12 +++
  src/layeng/Makefile.am                |   7 +-
- 7 files changed, 209 insertions(+), 16 deletions(-)
+ 10 files changed, 209 insertions(+), 16 deletions(-)
 
 commit 7da465f33ed5cd06d322eb0cdf174f313a2cf6e6
 Author: Dodji Seketeli <dodji@gnome.org>
@@ -3491,8 +4423,9 @@ Date:   Thu Jun 26 21:13:26 2003 +0000
     
     Dodji.
 
- .../{cssom-example.c => cssom-example-1.c}         | 33 ++++++++--------------
- 1 file changed, 11 insertions(+), 22 deletions(-)
+ docs/examples/cssom-example-1.c | 112 ++++++++++++++++++++++++++++++++++++
+ docs/examples/cssom-example.c   | 123 ----------------------------------------
+ 2 files changed, 112 insertions(+), 123 deletions(-)
 
 commit c5c2f5311cb851dc1859ddb00d497929c745a279
 Author: Dodji Seketeli <dodji at seketeli dot org>
@@ -4444,9 +5377,11 @@ Date:   Tue May 20 20:06:16 2003 +0000
     moved the style files in the selection engine directory.
     Dodji.
 
- src/{layeng => seleng}/cr-style.c | 3 ++-
- src/{layeng => seleng}/cr-style.h | 0
- 2 files changed, 2 insertions(+), 1 deletion(-)
+ src/layeng/cr-style.c | 1766 ------------------------------------------------
+ src/layeng/cr-style.h |  273 --------
+ src/seleng/cr-style.c | 1767 +++++++++++++++++++++++++++++++++++++++++++++++++
+ src/seleng/cr-style.h |  273 ++++++++
+ 4 files changed, 2040 insertions(+), 2039 deletions(-)
 
 commit cf0f243f7e99156489019360c062a08d824aed22
 Author: Dodji Seketeli <dodji@src.gnome.org>
@@ -4994,62 +5929,111 @@ Date:   Sat Apr 12 16:50:32 2003 +0000
     big tree layout cleanup.
     Dodji.
 
- src/Makefile.am                              | 44 +-------------
- src/layeng/Makefile.am                       | 17 ++++++
- src/{ => layeng}/cr-box.c                    |  0
- src/{ => layeng}/cr-box.h                    |  0
- src/{ => layeng}/cr-lay-eng.c                | 91 +++++++++++++++++++++++++++-
- src/{ => layeng}/cr-lay-eng.h                |  6 ++
- src/{ => layeng}/cr-style.c                  |  0
- src/{ => layeng}/cr-style.h                  |  0
- src/libcroco.h                               | 41 ++++++-------
- src/{ => parser}/Makefile.am                 | 15 +----
- src/{ => parser}/cr-additional-sel.c         |  0
- src/{ => parser}/cr-additional-sel.h         |  0
- src/{ => parser}/cr-attr-sel.c               |  0
- src/{ => parser}/cr-attr-sel.h               |  0
- src/{ => parser}/cr-cascade.c                |  0
- src/{ => parser}/cr-cascade.h                |  0
- src/{ => parser}/cr-declaration.c            |  0
- src/{ => parser}/cr-declaration.h            |  0
- src/{ => parser}/cr-doc-handler.c            |  0
- src/{ => parser}/cr-doc-handler.h            |  0
- src/{ => parser}/cr-enc-handler.c            |  0
- src/{ => parser}/cr-enc-handler.h            |  0
- src/{ => parser}/cr-input.c                  |  0
- src/{ => parser}/cr-input.h                  |  0
- src/{cr-lay-eng.h => parser/cr-layout-eng.h} | 24 +-------
- src/{ => parser}/cr-num.c                    |  0
- src/{ => parser}/cr-num.h                    |  0
- src/{ => parser}/cr-om-parser.c              |  0
- src/{ => parser}/cr-om-parser.h              |  0
- src/{ => parser}/cr-parser-input.h           |  0
- src/{ => parser}/cr-parser.c                 |  0
- src/{ => parser}/cr-parser.h                 |  0
- src/{ => parser}/cr-pseudo.c                 |  0
- src/{ => parser}/cr-pseudo.h                 |  0
- src/{ => parser}/cr-rgb.c                    |  0
- src/{ => parser}/cr-rgb.h                    |  0
- src/{ => parser}/cr-selector.c               |  0
- src/{ => parser}/cr-selector.h               |  0
- src/{ => parser}/cr-simple-sel.c             |  0
- src/{ => parser}/cr-simple-sel.h             |  0
- src/{ => parser}/cr-statement.c              |  0
- src/{ => parser}/cr-statement.h              |  0
- src/{ => parser}/cr-stylesheet.c             |  0
- src/{ => parser}/cr-stylesheet.h             |  0
- src/{ => parser}/cr-term.c                   |  0
- src/{ => parser}/cr-term.h                   |  0
- src/{ => parser}/cr-tknzr.c                  |  0
- src/{ => parser}/cr-tknzr.h                  |  0
- src/{ => parser}/cr-token.c                  |  0
- src/{ => parser}/cr-token.h                  |  0
- src/{ => parser}/cr-utils.c                  |  0
- src/{ => parser}/cr-utils.h                  |  0
- src/seleng/Makefile.am                       | 17 ++++++
- src/{ => seleng}/cr-sel-eng.c                | 73 +---------------------
- src/{ => seleng}/cr-sel-eng.h                |  9 +--
- 55 files changed, 160 insertions(+), 177 deletions(-)
+ src/Makefile.am                |   44 +-
+ src/cr-additional-sel.c        |  401 ----
+ src/cr-additional-sel.h        |  120 -
+ src/cr-attr-sel.c              |  239 --
+ src/cr-attr-sel.h              |   79 -
+ src/cr-box.c                   |  584 -----
+ src/cr-box.h                   |  247 --
+ src/cr-cascade.c               |  191 --
+ src/cr-cascade.h               |   85 -
+ src/cr-declaration.c           |  338 ---
+ src/cr-declaration.h           |   88 -
+ src/cr-doc-handler.c           |  142 --
+ src/cr-doc-handler.h           |  284 ---
+ src/cr-enc-handler.c           |  194 --
+ src/cr-enc-handler.h           |  100 -
+ src/cr-input.c                 | 1345 -----------
+ src/cr-input.h                 |  171 --
+ src/cr-lay-eng.c               |  614 -----
+ src/cr-lay-eng.h               |   64 -
+ src/cr-num.c                   |  239 --
+ src/cr-num.h                   |  106 -
+ src/cr-om-parser.c             | 1038 --------
+ src/cr-om-parser.h             |   89 -
+ src/cr-parser-input.h          |  162 --
+ src/cr-parser.c                | 5073 ----------------------------------------
+ src/cr-parser.h                |  110 -
+ src/cr-pseudo.c                |  173 --
+ src/cr-pseudo.h                |   70 -
+ src/cr-rgb.c                   |  228 --
+ src/cr-rgb.h                   |   81 -
+ src/cr-sel-eng.c               |  944 --------
+ src/cr-sel-eng.h               |   90 -
+ src/cr-selector.c              |  287 ---
+ src/cr-selector.h              |  100 -
+ src/cr-simple-sel.c            |  234 --
+ src/cr-simple-sel.h            |  130 -
+ src/cr-statement.c             | 1284 ----------
+ src/cr-statement.h             |  327 ---
+ src/cr-style.c                 | 1349 -----------
+ src/cr-style.h                 |  212 --
+ src/cr-stylesheet.c            |  122 -
+ src/cr-stylesheet.h            |   80 -
+ src/cr-term.c                  |  572 -----
+ src/cr-term.h                  |  198 --
+ src/cr-tknzr.c                 | 2844 ----------------------
+ src/cr-tknzr.h                 |  125 -
+ src/cr-token.c                 |  674 ------
+ src/cr-token.h                 |  247 --
+ src/cr-utils.c                 | 1449 ------------
+ src/cr-utils.h                 |  222 --
+ src/layeng/Makefile.am         |   17 +
+ src/layeng/cr-box.c            |  584 +++++
+ src/layeng/cr-box.h            |  247 ++
+ src/layeng/cr-lay-eng.c        |  701 ++++++
+ src/layeng/cr-lay-eng.h        |   70 +
+ src/layeng/cr-style.c          | 1349 +++++++++++
+ src/layeng/cr-style.h          |  212 ++
+ src/libcroco.h                 |   41 +-
+ src/parser/Makefile.am         |   35 +
+ src/parser/cr-additional-sel.c |  401 ++++
+ src/parser/cr-additional-sel.h |  120 +
+ src/parser/cr-attr-sel.c       |  239 ++
+ src/parser/cr-attr-sel.h       |   79 +
+ src/parser/cr-cascade.c        |  191 ++
+ src/parser/cr-cascade.h        |   85 +
+ src/parser/cr-declaration.c    |  338 +++
+ src/parser/cr-declaration.h    |   88 +
+ src/parser/cr-doc-handler.c    |  142 ++
+ src/parser/cr-doc-handler.h    |  284 +++
+ src/parser/cr-enc-handler.c    |  194 ++
+ src/parser/cr-enc-handler.h    |  100 +
+ src/parser/cr-input.c          | 1345 +++++++++++
+ src/parser/cr-input.h          |  171 ++
+ src/parser/cr-layout-eng.h     |   44 +
+ src/parser/cr-num.c            |  239 ++
+ src/parser/cr-num.h            |  106 +
+ src/parser/cr-om-parser.c      | 1038 ++++++++
+ src/parser/cr-om-parser.h      |   89 +
+ src/parser/cr-parser-input.h   |  162 ++
+ src/parser/cr-parser.c         | 5073 ++++++++++++++++++++++++++++++++++++++++
+ src/parser/cr-parser.h         |  110 +
+ src/parser/cr-pseudo.c         |  173 ++
+ src/parser/cr-pseudo.h         |   70 +
+ src/parser/cr-rgb.c            |  228 ++
+ src/parser/cr-rgb.h            |   81 +
+ src/parser/cr-selector.c       |  287 +++
+ src/parser/cr-selector.h       |  100 +
+ src/parser/cr-simple-sel.c     |  234 ++
+ src/parser/cr-simple-sel.h     |  130 +
+ src/parser/cr-statement.c      | 1284 ++++++++++
+ src/parser/cr-statement.h      |  327 +++
+ src/parser/cr-stylesheet.c     |  122 +
+ src/parser/cr-stylesheet.h     |   80 +
+ src/parser/cr-term.c           |  572 +++++
+ src/parser/cr-term.h           |  198 ++
+ src/parser/cr-tknzr.c          | 2844 ++++++++++++++++++++++
+ src/parser/cr-tknzr.h          |  125 +
+ src/parser/cr-token.c          |  674 ++++++
+ src/parser/cr-token.h          |  247 ++
+ src/parser/cr-utils.c          | 1449 ++++++++++++
+ src/parser/cr-utils.h          |  222 ++
+ src/seleng/Makefile.am         |   17 +
+ src/seleng/cr-sel-eng.c        |  875 +++++++
+ src/seleng/cr-sel-eng.h        |   83 +
+ 104 files changed, 24298 insertions(+), 24207 deletions(-)
 
 commit 4f5560ef67d35121d1087aee9b5e34dece012d8a
 Author: Dodji Seketeli <dodji@src.gnome.org>
