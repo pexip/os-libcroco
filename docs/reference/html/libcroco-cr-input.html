@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>cr-input: Libcroco Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="Libcroco Reference Manual">
 <link rel="up" href="ch01.html" title="Extensive APIs description">
 <link rel="prev" href="libcroco-cr-fonts.html" title="cr-fonts">
 <link rel="next" href="libcroco-cr-num.html" title="cr-num">
-<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="libcroco-cr-input.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -283,7 +283,7 @@
 </div>
 <div class="refsect1">
 <a name="libcroco-cr-input.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -319,8 +319,8 @@ cr_input_new_from_buf (<em class="parameter"><code><span class="type">guchar</sp
 <p>Creates a new input stream from a memory buffer.
 Returns the newly built instance of <a class="link" href="libcroco-cr-input.html#CRInput" title="struct CRInput"><span class="type">CRInput</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-new-from-buf.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -366,8 +366,8 @@ a file.</p>
 this method could read the file and create it,
 NULL otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-new-from-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -395,8 +395,8 @@ NULL otherwise.</p>
 cr_input_destroy (<em class="parameter"><code><a class="link" href="libcroco-cr-input.html#CRInput" title="struct CRInput"><span class="type">CRInput</span></a> *a_this</code></em>);</pre>
 <p>The destructor of the <a class="link" href="libcroco-cr-input.html#CRInput" title="struct CRInput"><span class="type">CRInput</span></a> class.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-destroy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -418,8 +418,8 @@ cr_input_ref (<em class="parameter"><code><a class="link" href="libcroco-cr-inpu
 <p>Increments the reference count of the current
 instance of <a class="link" href="libcroco-cr-input.html#CRInput" title="struct CRInput"><span class="type">CRInput</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-ref.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -443,8 +443,8 @@ of <a class="link" href="libcroco-cr-input.html#CRInput" title="struct CRInput">
 zero, this instance is destroyed.</p>
 <p>Returns TRUE if the instance of <a class="link" href="libcroco-cr-input.html#CRInput" title="struct CRInput"><span class="type">CRInput</span></a> got destroyed, false otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.6.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-unref.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -472,8 +472,8 @@ the next coming byte.</p>
 otherwise. All the out parameters of this method are valid if
 and only if this method returns CR_OK.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.7.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-read-byte.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -505,8 +505,8 @@ cr_input_read_char (<em class="parameter"><code><a class="link" href="libcroco-c
 <p>Returns CR_OK upon successful completion, an error code
 otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.8.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-read-char.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -543,8 +543,8 @@ a_nb_char, then this function consumes all the characters it can consume.</p>
 <p>Returns CR_OK if at least one character has been consumed, an error code
 otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.9.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-consume-chars.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -585,8 +585,8 @@ and only if that character equals a_char.</p>
 <p>Returns CR_OK upon successful completion, CR_PARSING_ERROR if
 next char is different from a_char, an other error code otherwise</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.10.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-consume-char.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -618,8 +618,8 @@ cr_input_consume_white_spaces (<em class="parameter"><code><a class="link" href=
 spaces.</p>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.11.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-consume-white-spaces.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -659,8 +659,8 @@ will return the same byte.</p>
 CR_BAD_PARAM_ERROR if at least one of the parameters is invalid;
 CR_OUT_OF_BOUNDS_ERROR if the indexed byte is out of bounds.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.12.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-peek-byte.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -704,8 +704,8 @@ cr_input_peek_byte2 (<em class="parameter"><code><a class="link" href="libcroco-
 interface.</p>
 <p>Returns the read byte or 0 if something bad happened.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.13.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-peek-byte2.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -747,8 +747,8 @@ return the same character as the current one.</p>
 <p>Returns CR_OK upon successful completion, an error code
 otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.14.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-peek-char.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -777,10 +777,10 @@ cr_input_get_byte_addr (<em class="parameter"><code><a class="link" href="libcro
                         <em class="parameter"><code><span class="type">gulong</span> a_offset</code></em>);</pre>
 <p>Gets the memory address of the byte located at a given offset
 in the input stream.</p>
-<p>Returns the address, otherwise NULL if an error occured.</p>
+<p>Returns the address, otherwise NULL if an error occurred.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.15.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-get-byte-addr.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -811,8 +811,8 @@ cr_input_get_cur_byte_addr (<em class="parameter"><code><a class="link" href="li
 <p>Gets the address of the current character pointer.</p>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.16.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-get-cur-byte-addr.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -847,8 +847,8 @@ the byte next after the new "current byte index".</p>
 CR_BAD_PARAM_ERROR if at least one of the parameters is not valid
 or CR_OUT_BOUNDS_ERROR in case of error.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.17.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-seek-index.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -888,8 +888,8 @@ next byte to be read.</p>
 <p>Returns CR_OK upon successful completion, an error code
 otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.18.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-get-cur-index.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -921,8 +921,8 @@ cr_input_set_cur_index (<em class="parameter"><code><a class="link" href="libcro
 It sets the index of the next byte to be read.</p>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.19.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-set-cur-index.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -961,8 +961,8 @@ or <a class="link" href="libcroco-cr-input.html#cr-input-seek-index" title="cr_i
 Note that the out parameters of this function are valid if and only if this
 function returns CR_OK.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.20.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-get-cur-pos.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -992,8 +992,8 @@ cr_input_set_cur_pos (<em class="parameter"><code><a class="link" href="libcroco
 <p>Sets the current position in the input stream.</p>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.21.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-set-cur-pos.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1028,8 +1028,8 @@ stream.</p>
 <p>Returns CR_OK upon successful completion, an error
 code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.22.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-get-parsing-location.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1060,8 +1060,8 @@ cr_input_get_end_of_line (<em class="parameter"><code><a class="link" href="libc
 <p>Returns CR_OK upon successful completion, an error code
 otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.23.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-get-end-of-line.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1093,8 +1093,8 @@ cr_input_set_end_of_line (<em class="parameter"><code><a class="link" href="libc
 <p>Returns CR_OK upon successful completion, an error code
 otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.24.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-set-end-of-line.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1124,8 +1124,8 @@ cr_input_get_end_of_file (<em class="parameter"><code><a class="link" href="libc
 <p>Gets the end of file flag.</p>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.25.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-get-end-of-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1156,8 +1156,8 @@ cr_input_set_end_of_file (<em class="parameter"><code><a class="link" href="libc
 <p>Sets the end of file flag.</p>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.26.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-set-end-of-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1187,8 +1187,8 @@ cr_input_set_line_num (<em class="parameter"><code><a class="link" href="libcroc
 <p>Setter of the current line number.</p>
 <p>Return CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.27.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-set-line-num.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1218,8 +1218,8 @@ cr_input_get_line_num (<em class="parameter"><code><a class="link" href="libcroc
 <p>Getter of the current line number.</p>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.28.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-get-line-num.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1249,8 +1249,8 @@ cr_input_set_column_num (<em class="parameter"><code><a class="link" href="libcr
 <p>Setter of the current column number.</p>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.29.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-set-column-num.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1280,8 +1280,8 @@ cr_input_get_column_num (<em class="parameter"><code><a class="link" href="libcr
 <p>Getter of the current column number.</p>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.30.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-get-column-num.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1311,8 +1311,8 @@ cr_input_increment_line_num (<em class="parameter"><code><a class="link" href="l
 <p>Increments the current line number.</p>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.31.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-increment-line-num.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1342,8 +1342,8 @@ cr_input_increment_col_num (<em class="parameter"><code><a class="link" href="li
 <p>Increments the current column number.</p>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.32.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-increment-col-num.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1372,8 +1372,8 @@ cr_input_get_nb_bytes_left (<em class="parameter"><code><a class="link" href="li
 <p>Returns the number of bytes left in the input stream
 before the end, -1 in case of error.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.33.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-get-nb-bytes-left.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1399,8 +1399,8 @@ cr_input_end_of_input (<em class="parameter"><code><a class="link" href="libcroc
 Note that all the out parameters of this method are valid if
 and only if this method returns CR_OK.</p>
 <div class="refsect3">
-<a name="id-1.2.9.6.34.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-input-end-of-input.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1453,6 +1453,6 @@ FALSE otherwise.</p></td>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24.1</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

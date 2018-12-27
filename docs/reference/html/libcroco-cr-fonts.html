@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>cr-fonts: Libcroco Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="Libcroco Reference Manual">
 <link rel="up" href="ch01.html" title="Extensive APIs description">
 <link rel="prev" href="libcroco-cr-enc-handler.html" title="cr-enc-handler">
 <link rel="next" href="libcroco-cr-input.html" title="cr-input">
-<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="libcroco-cr-fonts.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -247,7 +247,7 @@
 </div>
 <div class="refsect1">
 <a name="libcroco-cr-fonts.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -285,8 +285,8 @@ cr_font_family_new (<em class="parameter"><code><span class="type">enum CRFontFa
 <p>create a font family.</p>
 <p>Returns the newly built font family.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.2.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-family-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -315,8 +315,8 @@ cr_font_family_append (<em class="parameter"><code><a class="link" href="libcroc
                        <em class="parameter"><code><a class="link" href="libcroco-cr-fonts.html#CRFontFamily" title="struct CRFontFamily"><span class="type">CRFontFamily</span></a> *a_family_to_append</code></em>);</pre>
 <p>Returns the new font family list.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-family-append.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -346,8 +346,8 @@ cr_font_family_to_string (<em class="parameter"><code><a class="link" href="libc
 <p>Returns the seriliazed font family. The caller has to free it using
 <code class="function">g_free()</code>.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-family-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -376,8 +376,8 @@ cr_font_family_prepend (<em class="parameter"><code><a class="link" href="libcro
                         <em class="parameter"><code><a class="link" href="libcroco-cr-fonts.html#CRFontFamily" title="struct CRFontFamily"><span class="type">CRFontFamily</span></a> *a_family_to_prepend</code></em>);</pre>
 <p>Returns the font family list.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-family-prepend.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -405,8 +405,8 @@ cr_font_family_prepend (<em class="parameter"><code><a class="link" href="libcro
 cr_font_family_destroy (<em class="parameter"><code><a class="link" href="libcroco-cr-fonts.html#CRFontFamily" title="struct CRFontFamily"><span class="type">CRFontFamily</span></a> *a_this</code></em>);</pre>
 <p>Returns CR_OK upon sucessful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-family-destroy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -428,8 +428,8 @@ cr_font_family_set_name (<em class="parameter"><code><a class="link" href="libcr
                          <em class="parameter"><code><span class="type">guchar</span> *a_name</code></em>);</pre>
 <p>Returns CR_OK upon sucessful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-family-set-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -464,8 +464,8 @@ cr_font_size_new (<em class="parameter"><code><span class="type">void</span></co
 cr_font_size_clear (<em class="parameter"><code><a class="link" href="libcroco-cr-fonts.html#CRFontSize" title="struct CRFontSize"><span class="type">CRFontSize</span></a> *a_this</code></em>);</pre>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-size-clear.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -487,8 +487,8 @@ cr_font_size_copy (<em class="parameter"><code><a class="link" href="libcroco-cr
                    <em class="parameter"><code><a class="link" href="libcroco-cr-fonts.html#CRFontSize" title="struct CRFontSize"><span class="type">CRFontSize</span></a> const *a_src</code></em>);</pre>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-size-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -518,8 +518,8 @@ cr_font_size_set_predefined_absolute_font_size
                                 <em class="parameter"><code><span class="type">enum CRPredefinedAbsoluteFontSize</span> a_predefined</code></em>);</pre>
 <p>Returns CR_OK upon sucessful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-size-set-predefined-absolute-font-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -548,8 +548,8 @@ cr_font_size_set_relative_font_size (<em class="parameter"><code><a class="link"
                                      <em class="parameter"><code><span class="type">enum CRRelativeFontSize</span> a_relative</code></em>);</pre>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.12.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-size-set-relative-font-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -579,8 +579,8 @@ cr_font_size_set_absolute_font_size (<em class="parameter"><code><a class="link"
                                      <em class="parameter"><code><span class="type">gdouble</span> a_value</code></em>);</pre>
 <p>Returns CR_OK upon succesful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.13.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-size-set-absolute-font-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -613,8 +613,8 @@ cr_font_size_set_absolute_font_size (<em class="parameter"><code><a class="link"
 cr_font_size_set_to_inherit (<em class="parameter"><code><a class="link" href="libcroco-cr-fonts.html#CRFontSize" title="struct CRFontSize"><span class="type">CRFontSize</span></a> *a_this</code></em>);</pre>
 <p>Returns CR_OK upon succesful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.14.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-size-set-to-inherit.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -635,8 +635,8 @@ cr_font_size_set_to_inherit (<em class="parameter"><code><a class="link" href="l
 cr_font_size_is_set_to_inherit (<em class="parameter"><code><a class="link" href="libcroco-cr-fonts.html#CRFontSize" title="struct CRFontSize"><span class="type">CRFontSize</span></a> const *a_this</code></em>);</pre>
 <p>Returns TRUE if the current instance is set to 'inherit'.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.15.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-size-is-set-to-inherit.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -658,8 +658,8 @@ cr_font_size_to_string (<em class="parameter"><code><a class="link" href="libcro
 <p>Returns the serialized form of <a class="link" href="libcroco-cr-fonts.html#CRFontSize" title="struct CRFontSize"><span class="type">CRFontSize</span></a>. The returned string
 has to bee freed using <code class="function">g_free()</code>.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.16.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-size-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -679,8 +679,8 @@ has to bee freed using <code class="function">g_free()</code>.</p>
 <pre class="programlisting"><span class="returnvalue">void</span>
 cr_font_size_destroy (<em class="parameter"><code><a class="link" href="libcroco-cr-fonts.html#CRFontSize" title="struct CRFontSize"><span class="type">CRFontSize</span></a> *a_font_size</code></em>);</pre>
 <div class="refsect3">
-<a name="id-1.2.8.6.17.4"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-size-destroy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -708,8 +708,8 @@ cr_font_size_adjust_new (<em class="parameter"><code><span class="type">void</sp
 cr_font_size_adjust_to_string (<em class="parameter"><code><a class="link" href="libcroco-cr-fonts.html#CRFontSizeAdjust" title="struct CRFontSizeAdjust"><span class="type">CRFontSizeAdjust</span></a> const *a_this</code></em>);</pre>
 <p>Returns the serialized form of <a class="link" href="libcroco-cr-fonts.html#CRFontSizeAdjust" title="struct CRFontSizeAdjust"><span class="type">CRFontSizeAdjust</span></a></p>
 <div class="refsect3">
-<a name="id-1.2.8.6.19.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-size-adjust-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -729,8 +729,8 @@ cr_font_size_adjust_to_string (<em class="parameter"><code><a class="link" href=
 <pre class="programlisting"><span class="returnvalue">void</span>
 cr_font_size_adjust_destroy (<em class="parameter"><code><a class="link" href="libcroco-cr-fonts.html#CRFontSizeAdjust" title="struct CRFontSizeAdjust"><span class="type">CRFontSizeAdjust</span></a> *a_this</code></em>);</pre>
 <div class="refsect3">
-<a name="id-1.2.8.6.20.4"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-size-adjust-destroy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -760,8 +760,8 @@ cr_font_size_get_larger_predefined_font_size
                                (<em class="parameter"><code><span class="type">enum CRPredefinedAbsoluteFontSize</span> a_font_size</code></em>,
                                 <em class="parameter"><code><span class="type">enum CRPredefinedAbsoluteFontSize</span> *a_larger_size</code></em>);</pre>
 <div class="refsect3">
-<a name="id-1.2.8.6.22.4"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-size-get-larger-predefined-font-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -793,8 +793,8 @@ cr_font_size_is_predefined_absolute_font_size
 <p>Returns TRUE if the instance is an predefined absolute font size, FALSE
 otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.23.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-size-is-predefined-absolute-font-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -816,8 +816,8 @@ cr_font_style_to_string (<em class="parameter"><code><span class="type">enum CRF
 <p>Returns the serialized <span class="type">CRFontStyle</span>. The caller must free the returned
 string using <code class="function">g_free()</code>.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.24.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-style-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -838,8 +838,8 @@ string using <code class="function">g_free()</code>.</p>
 cr_font_weight_to_string (<em class="parameter"><code><span class="type">enum CRFontWeight</span> a_code</code></em>);</pre>
 <p>Returns the serialized form of <span class="type">CRFontWeight</span>.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.25.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-weight-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -861,8 +861,8 @@ cr_font_weight_get_bolder (<em class="parameter"><code><span class="type">enum C
 <p>Returns a font weight bolder than <em class="parameter"><code>a_weight</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.2.8.6.26.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-weight-get-bolder.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -884,8 +884,8 @@ cr_font_variant_to_string (<em class="parameter"><code><span class="type">enum C
 <p>Returns the serialized form of <span class="type">CRFontVariant</span>. The caller has
 to free the returned string using <code class="function">g_free()</code>.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.27.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-variant-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -906,8 +906,8 @@ to free the returned string using <code class="function">g_free()</code>.</p>
 cr_font_stretch_to_string (<em class="parameter"><code><span class="type">enum CRFontStretch</span> a_code</code></em>);</pre>
 <p>Returns the serialized form of <span class="type">CRFontStretch</span>.</p>
 <div class="refsect3">
-<a name="id-1.2.8.6.28.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-font-stretch-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -945,8 +945,8 @@ cr_font_stretch_to_string (<em class="parameter"><code><span class="type">enum C
 <div class="refsect2">
 <a name="CRFontSizeType"></a><h3>enum CRFontSizeType</h3>
 <div class="refsect3">
-<a name="id-1.2.8.7.3.3"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="CRFontSizeType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -1007,6 +1007,6 @@ cr_font_stretch_to_string (<em class="parameter"><code><span class="type">enum C
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24.1</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>
