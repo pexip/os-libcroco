@@ -507,9 +507,9 @@
     <keyword type="enum" name="enum CRStatus" link="libcroco-cr-utils.html#CRStatus"/>
     <keyword type="enum" name="enum CRSeekPos" link="libcroco-cr-utils.html#CRSeekPos"/>
     <keyword type="macro" name="CROCO_LOG_DOMAIN" link="libcroco-cr-utils.html#CROCO-LOG-DOMAIN:CAPS"/>
-    <keyword type="macro" name="CROCO_HAVE_LIBXML2" link="libcroco-libcroco-config.html#CROCO-HAVE-LIBXML2:CAPS"/>
     <keyword type="macro" name="LIBCROCO_VERSION" link="libcroco-libcroco-config.html#LIBCROCO-VERSION:CAPS"/>
     <keyword type="macro" name="G_DISABLE_CHECKS" link="libcroco-libcroco-config.html#G-DISABLE-CHECKS:CAPS"/>
+    <keyword type="macro" name="CROCO_HAVE_LIBXML2" link="libcroco-libcroco-config.html#CROCO-HAVE-LIBXML2:CAPS"/>
     <keyword type="constant" name="PREDEFINED_ABSOLUTE_FONT_SIZE" link="libcroco-cr-fonts.html#PREDEFINED-ABSOLUTE-FONT-SIZE:CAPS"/>
     <keyword type="constant" name="ABSOLUTE_FONT_SIZE" link="libcroco-cr-fonts.html#ABSOLUTE-FONT-SIZE:CAPS"/>
     <keyword type="constant" name="RELATIVE_FONT_SIZE" link="libcroco-cr-fonts.html#RELATIVE-FONT-SIZE:CAPS"/>

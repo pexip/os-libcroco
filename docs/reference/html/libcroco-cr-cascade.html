@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>cr-cascade: Libcroco Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="Libcroco Reference Manual">
 <link rel="up" href="ch01.html" title="Extensive APIs description">
 <link rel="prev" href="libcroco-cr-attr-sel.html" title="cr-attr-sel">
 <link rel="next" href="libcroco-cr-declaration.html" title="cr-declaration">
-<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="libcroco-cr-cascade.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -91,7 +91,7 @@
 </div>
 <div class="refsect1">
 <a name="libcroco-cr-cascade.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -129,8 +129,8 @@ should call their ref/unref method instead if it wants</p>
 <p>Returns the newly built instance of CRCascade or NULL if
 an error arose during constrution.</p>
 <div class="refsect3">
-<a name="id-1.2.4.6.2.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-cascade-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -171,8 +171,8 @@ of the <a class="link" href="libcroco-cr-stylesheet.html#cr-stylesheet-destroy" 
 Returns the style sheet, or NULL if it does not
 exist.</p>
 <div class="refsect3">
-<a name="id-1.2.4.6.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-cascade-get-sheet.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -206,8 +206,8 @@ cr_cascade_set_sheet (<em class="parameter"><code><a class="link" href="libcroco
 <p>Returns CR_OK upon successfull completion, an error
 code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.4.6.4.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-cascade-set-sheet.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -241,8 +241,8 @@ cr_cascade_ref (<em class="parameter"><code><a class="link" href="libcroco-cr-ca
 <p>Increases the reference counter of the current instance
 of <a class="link" href="libcroco-cr-cascade.html#CRCascade" title="struct CRCascade"><span class="type">CRCascade</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.2.4.6.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-cascade-ref.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -266,8 +266,8 @@ to this instance of <a class="link" href="libcroco-cr-cascade.html#CRCascade" ti
 counter reaches zero, the instance is destroyed 
 using <a class="link" href="libcroco-cr-cascade.html#cr-cascade-destroy" title="cr_cascade_destroy ()"><code class="function">cr_cascade_destroy()</code></a></p>
 <div class="refsect3">
-<a name="id-1.2.4.6.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-cascade-unref.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -289,8 +289,8 @@ using <a class="link" href="libcroco-cr-cascade.html#cr-cascade-destroy" title="
 cr_cascade_destroy (<em class="parameter"><code><a class="link" href="libcroco-cr-cascade.html#CRCascade" title="struct CRCascade"><span class="type">CRCascade</span></a> *a_this</code></em>);</pre>
 <p>Destructor of <a class="link" href="libcroco-cr-cascade.html#CRCascade" title="struct CRCascade"><span class="type">CRCascade</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.2.4.6.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-cascade-destroy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -322,6 +322,6 @@ cr_cascade_destroy (<em class="parameter"><code><a class="link" href="libcroco-c
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24.1</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

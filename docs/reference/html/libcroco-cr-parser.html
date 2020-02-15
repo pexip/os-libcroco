@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>cr-parser: Libcroco Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="Libcroco Reference Manual">
 <link rel="up" href="ch01.html" title="Extensive APIs description">
 <link rel="prev" href="libcroco-cr-om-parser.html" title="cr-om-parser">
 <link rel="next" href="libcroco-cr-parsing-location.html" title="cr-parsing-location">
-<meta name="generator" content="GTK-Doc V1.24.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="libcroco-cr-parser.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -245,7 +245,7 @@
 </div>
 <div class="refsect1">
 <a name="libcroco-cr-parser.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -274,10 +274,10 @@ cr_parser_new (<em class="parameter"><code><a class="link" href="libcroco-cr-tkn
 <p>Creates a new parser to parse data
 coming the input stream given in parameter.</p>
 <p>Returns the newly created instance of <a class="link" href="libcroco-cr-parser.html#CRParser" title="struct CRParser"><span class="type">CRParser</span></a>,
-or NULL if an error occured.</p>
+or NULL if an error occurred.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.2.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -302,8 +302,8 @@ cr_parser_new_from_buf (<em class="parameter"><code><span class="type">guchar</s
 <p>Instanciates a new parser from a memory buffer.</p>
 <p>Returns the newly built parser, or NULL if an error arises.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-new-from-buf.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -345,8 +345,8 @@ cr_parser_new_from_file (<em class="parameter"><code>const <span class="type">gu
                          <em class="parameter"><code><span class="type">enum CREncoding</span> a_enc</code></em>);</pre>
 <p>Returns the newly built parser.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-new-from-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -374,8 +374,8 @@ cr_parser_new_from_file (<em class="parameter"><code>const <span class="type">gu
 cr_parser_new_from_input (<em class="parameter"><code><a class="link" href="libcroco-cr-input.html#CRInput" title="struct CRInput"><span class="type">CRInput</span></a> *a_input</code></em>);</pre>
 <p>Returns a newly built parser input.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-new-from-input.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -397,8 +397,8 @@ cr_parser_set_tknzr (<em class="parameter"><code><a class="link" href="libcroco-
                      <em class="parameter"><code><a class="link" href="libcroco-cr-tknzr.html#CRTknzr" title="struct CRTknzr"><span class="type">CRTknzr</span></a> *a_tknzr</code></em>);</pre>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-set-tknzr.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -429,8 +429,8 @@ cr_parser_get_tknzr (<em class="parameter"><code><a class="link" href="libcroco-
 <p>Returns CR_OK upon succesful completion, an error code
 otherwise</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.7.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-get-tknzr.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -461,8 +461,8 @@ cr_parser_get_parsing_location (<em class="parameter"><code><a class="link" href
 <p>Returns CR_OK upon succesful completion, an error code
 otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.8.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-get-parsing-location.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -493,8 +493,8 @@ cr_parser_try_to_skip_spaces_and_comments
 spaces and comments.</p>
 <p>Returns CR_OK upon successfull completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.9.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-try-to-skip-spaces-and-comments.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -517,8 +517,8 @@ cr_parser_set_sac_handler (<em class="parameter"><code><a class="link" href="lib
 <p>Sets a SAC document handler to the parser.</p>
 <p>Returns CR_OK upon successfull completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.10.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-set-sac-handler.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -549,8 +549,8 @@ cr_parser_get_sac_handler (<em class="parameter"><code><a class="link" href="lib
 <p>Returns CR_OK upon successfull completion, an error code
 otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.11.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-get-sac-handler.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -580,8 +580,8 @@ cr_parser_set_use_core_grammar (<em class="parameter"><code><a class="link" href
                                 <em class="parameter"><code><span class="type">gboolean</span> a_use_core_grammar</code></em>);</pre>
 <p>Returns CR_OK upon succesful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.12.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-set-use-core-grammar.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -610,8 +610,8 @@ cr_parser_get_use_core_grammar (<em class="parameter"><code><a class="link" href
                                 <em class="parameter"><code><span class="type">gboolean</span> *a_use_core_grammar</code></em>);</pre>
 <p>Returns CR_OK upon succesful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.13.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-get-use-core-grammar.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -642,8 +642,8 @@ input previously associated to the current instance of
 <a class="link" href="libcroco-cr-parser.html#CRParser" title="struct CRParser"><span class="type">CRParser</span></a>.</p>
 <p>Returns CR_OK upon succesful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.14.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-parse.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -667,8 +667,8 @@ cr_parser_parse_file (<em class="parameter"><code><a class="link" href="libcroco
 <p>Parses a the given in parameter.</p>
 <p>Returns CR_OK upon successfull completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.15.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-parse-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -706,8 +706,8 @@ cr_parser_parse_buf (<em class="parameter"><code><a class="link" href="libcroco-
 <p>Parses a stylesheet from a buffer</p>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.16.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-parse-buf.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -747,8 +747,8 @@ cr_parser_set_default_sac_handler (<em class="parameter"><code><a class="link" h
 of <a class="link" href="libcroco-cr-parser.html#CRParser" title="struct CRParser"><span class="type">CRParser</span></a> to the default SAC handler.</p>
 <p>Returns CR_OK upon successfull completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.17.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-set-default-sac-handler.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -775,8 +775,8 @@ STRING S* | IDENT S* | URI S* | RGB S* | UNICODERANGE S* | hexcolor</p>
 <p>TODO: handle parsing of 'RGB'</p>
 <p>Returns CR_OK upon successfull completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.18.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-parse-term.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -801,8 +801,8 @@ D.1:
 expr: term [ operator term ]*</p>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.19.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-parse-expr.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -834,8 +834,8 @@ the css2 grammar in appendix C:
 prio: IMPORTANT_SYM S*</p>
 <p>Returns CR_OK upon successful completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.20.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-parse-prio.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -872,8 +872,8 @@ Parses a "declaration" as defined by the css2 spec in appendix D.1:
 declaration ::= [property ':' S* expr prio?]?</p>
 <p>Returns CR_OK upon successfull completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.21.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-parse-declaration.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -911,8 +911,8 @@ chapter 4.1 of the css2 spec.
 statement   : ruleset | at-rule;</p>
 <p>Returns CR_OK upon successfull completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.22.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-parse-statement-core.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -940,8 +940,8 @@ See the documentation of <a class="link" href="libcroco-cr-doc-handler.html#CRDo
 when which SAC handler is called.</p>
 <p>Returns CR_OK upon successfull completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.23.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-parse-ruleset.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -969,8 +969,8 @@ in appendix D.1:</p>
 @import [STRING|URI] S* [ medium [ ',' S* medium]* ]? ';' S*</p>
 <p>Returns CR_OK upon sucessfull completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.24.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-parse-import.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1024,8 +1024,8 @@ to notify media productions. See <a class="link" href="libcroco-cr-doc-handler.h
 during @media parsing.</p>
 <p>Returns CR_OK upon successfull completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.25.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-parse-media.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1052,8 +1052,8 @@ encounters a construction that must
 be reported to the calling application.</p>
 <p>Returns CR_OK upon successfull completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.26.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-parse-page.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1079,8 +1079,8 @@ appendix D.1:
 charset ::= CHARSET_SYM S* STRING S* ';'</p>
 <p>Returns CR_OK upon successfull completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.27.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-parse-charset.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1120,8 +1120,8 @@ appendix D.1:</p>
 <p>This function will call SAC handlers whenever it is necessary.</p>
 <p>Returns CR_OK upon successfull completion, an error code otherwise.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.28.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-parse-font-face.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1143,8 +1143,8 @@ cr_parser_destroy (<em class="parameter"><code><a class="link" href="libcroco-cr
 <p>Destroys the current instance
 of <a class="link" href="libcroco-cr-parser.html#CRParser" title="struct CRParser"><span class="type">CRParser</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.2.12.6.29.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="cr-parser-destroy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1177,6 +1177,6 @@ destroy.</p></td>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24.1</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>
