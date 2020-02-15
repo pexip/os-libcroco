@@ -14,7 +14,7 @@ Build-Depends: debhelper (>= 10),
 Standards-Version: 3.9.8
 Vcs-Svn: svn://anonscm.debian.org/pkg-gnome/desktop/unstable/libcroco
 Vcs-Browser: https://anonscm.debian.org/viewvc/pkg-gnome/desktop/unstable/libcroco
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ stretch
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ buster
 
 Package: libcroco3-dev
 Section: libdevel
