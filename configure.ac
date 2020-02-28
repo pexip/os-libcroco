@@ -1,6 +1,6 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.64)
-AC_INIT([libcroco],[0.6.11],[http://bugzilla.gnome.org/enter_bug.cgi?product=libcroco],[libcroco])
+AC_INIT([libcroco],[0.6.12],[http://bugzilla.gnome.org/enter_bug.cgi?product=libcroco],[libcroco])
 AC_CONFIG_SRCDIR([src/cr-input.c])
 AC_CANONICAL_HOST
 
@@ -18,7 +18,7 @@ m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
 LIBCROCO_MAJOR_VERSION=0
 LIBCROCO_MINOR_VERSION=6
-LIBCROCO_MICRO_VERSION=9
+LIBCROCO_MICRO_VERSION=12
 
 LIBCROCO_CURRENT=3
 LIBCROCO_REVISION=1
@@ -118,6 +118,13 @@ fi
 
 AC_SUBST([BSYMBOLIC_LDFLAG])
 
+##############################################
+# Check whether MSVC toolset is explicitly set
+##############################################
+
+AM_CONDITIONAL(MSVC_BASE_NO_TOOLSET_SET, [test x$MSVC_BASE_TOOLSET = x])
+AM_CONDITIONAL(MSVC_NO_TOOLSET_SET, [test x$MSVC_TOOLSET = x])
+
 ###################
 # Compiler warnings
 ###################
@@ -146,15 +153,15 @@ libcroco.spec
 libcroco-zip
 croco-config
 config.h.win32
-build/Makefile
-build/win32/Makefile
-build/win32/vs9/Makefile
-build/win32/vs9/croco-version-paths.vsprops
-build/win32/vs10/Makefile
-build/win32/vs10/croco-version-paths.props
-build/win32/vs11/Makefile
-build/win32/vs12/Makefile
-build/win32/vs14/Makefile
+win32/Makefile
+win32/vs9/Makefile
+win32/vs9/croco-version-paths.vsprops
+win32/vs10/Makefile
+win32/vs10/croco-version-paths.props
+win32/vs11/Makefile
+win32/vs12/Makefile
+win32/vs14/Makefile
+win32/vs15/Makefile
 docs/Makefile
 docs/examples/Makefile
 docs/reference/Makefile
