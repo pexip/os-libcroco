@@ -1,3 +1,9 @@
+libcroco (0.6.12-3pexip1) pexip; urgency=medium
+
+  * Migrate to Buster
+
+ -- Vincent Sanders <vince@pexip.com>  Fri, 28 Feb 2020 23:03:26 +0000
+
 libcroco (0.6.12-3) unstable; urgency=medium
 
   * Update Vcs fields for migration to https://salsa.debian.org/
