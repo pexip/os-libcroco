@@ -1,3 +1,9 @@
+libcroco (0.6.12-3pexip2) pexip; urgency=medium
+
+  * Rebuild in buster environment
+
+ -- Steve McIntyre <steve.mcintyre@pexip.com>  Wed, 15 Jul 2020 23:04:18 +0000
+
 libcroco (0.6.12-3pexip1) pexip; urgency=medium
 
   * Migrate to Buster
